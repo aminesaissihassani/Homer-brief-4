@@ -1,6 +1,9 @@
 @import "./colors";
 @import "./functions";
-
+* {
+    padding: 0;
+    margin: 0;
+}
 /* Home Start */
 .newbooks{
     display: flex;
@@ -74,7 +77,13 @@
 
 /* Gallery Start */
 .boder {
-    @include flexCenter(row);
+    @include flexCenter();
+    .filter {
+        width: 20%;
+    }
+    main {
+        width: 80%;
+    }
 }
 /* Gallery End */
 
