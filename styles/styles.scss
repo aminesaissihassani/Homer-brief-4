@@ -83,15 +83,7 @@
 /* Home End */
 
 /* Gallery Start */
-.boder {
-    @include flexCenter();
-    .filter {
-        width: 20%;
-    }
-    main {
-        width: 80%;
-    }
-}
+@import "./gallery";
 /* Gallery End */
 
 /* CRUD Start */

@@ -117,6 +117,9 @@
 
 .boder .filter {
   width: 20%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .boder main {

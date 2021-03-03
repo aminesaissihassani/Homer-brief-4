@@ -1,0 +1,11 @@
+
+.boder {
+    @include flexCenter();
+    .filter {
+        width: 20%;
+        align-items: flex-start;
+    }
+    main {
+        width: 80%;
+    }
+}
