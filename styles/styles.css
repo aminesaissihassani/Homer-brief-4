@@ -1,0 +1,98 @@
+/* Home Start */
+.newbooks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.newbooks .dnb {
+  width: 50vw;
+}
+
+.newbooks .dnb h1 {
+  font-size: 25px;
+  font-family: Rockwell;
+}
+
+.newbooks .dnb P {
+  font-family: Rockwell;
+  color: #8D8E93;
+}
+
+.newbooks .dnb .btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #FCA311;
+  border: none;
+  color: aliceblue;
+}
+
+.newbooks .imgnb {
+  width: 50vw;
+}
+
+.newbooks .imgnb .img1 {
+  width: 240px;
+  height: 365px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 3px #FCA311 solid;
+}
+
+.bestsell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #E5E5E5;
+}
+
+.bestsell .imgbs {
+  width: 50vw;
+}
+
+.bestsell .imgbs .img2 {
+  width: 240px;
+  height: 365px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 3px #FCA311 solid;
+}
+
+.bestsell .dbs {
+  width: 50vw;
+}
+
+.bestsell .dbs h1 {
+  font-size: 25px;
+  font-family: Rockwell;
+}
+
+.bestsell .dbs P {
+  font-family: Rockwell;
+  color: #8D8E93;
+}
+
+.bestsell .dbs .btn2 {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #FCA311;
+  border: none;
+  color: aliceblue;
+}
+
+/* Home End */
+/* Gallery Start */
+/* Gallery End */
+/* CRUD Start */
+/* CRUD End */
+/*# sourceMappingURL=styles.css.map */
