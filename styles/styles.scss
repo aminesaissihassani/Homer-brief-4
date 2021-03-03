@@ -6,7 +6,9 @@
 /* Home End */
 
 /* Gallery Start */
-    
+.boder {
+    @include flexCenter(row);
+}
 /* Gallery End */
 
 /* CRUD Start */
