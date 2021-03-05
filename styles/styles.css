@@ -99,7 +99,17 @@
 
 /* Home End */
 /* Gallery Start */
+* {
+  outline: none !important;
+}
+
 .boder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.boder .filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,21 +119,62 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 5px;
+  width: 20%;
+  height: 100%;
 }
 
-.boder .filter {
-  width: 20%;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.boder .filter input {
+  border: none;
+}
+
+.boder .filter input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.boder .filter input:-ms-input-placeholder {
+  text-align: center;
+}
+
+.boder .filter input::-ms-input-placeholder {
+  text-align: center;
+}
+
+.boder .filter input::placeholder {
+  text-align: center;
+}
+
+.boder .filter select {
+  border: 1px solid #E5E5E5;
+}
+
+.boder .filter .plusbtnnone {
+  display: none;
+}
+
+.boder .filter label i {
+  color: #FCA311;
 }
 
 .boder main {
+  margin: 30px 5px;
   width: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+}
+
+.boder main section {
+  text-align: center;
+}
+
+.boder main section div img {
+  width: 85%;
 }
 
 /* Gallery End */
