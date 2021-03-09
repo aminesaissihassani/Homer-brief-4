@@ -79,6 +79,25 @@ function filter()
             }
         }
     }
+    if(filterBooks.length>0 && filterAuthors.length>0){
+      var max=  Math.max(filterBooks.length, filterAuthors.length);
+    //   alert(max);
+        for (var i = 0; i < secLen; i++)
+        {
+            for (var j=0;j< max;j++)
+            {
+                if ((filterAuthors[j] == author[i].innerHTML) &&(filterBooks[j] == title[i].innerHTML) )
+                {
+                    sections[i].style = "display:block";
+                   
+                }
+                else
+                {
+                    sections[i].style = "display:none";
+                }
+            }
+        }
+    }
 }
 // function disp()
 // {
