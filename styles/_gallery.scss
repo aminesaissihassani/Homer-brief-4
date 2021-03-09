@@ -15,17 +15,30 @@
                 text-align: center;
             }
         }
-    
-        select {
-            border: 1px solid $platinum;
-        }
-        .plusbtnnone {
+        .btnnone {
             display: none;
         }
         label {
             i {
                 color: $orangeWeb;
             }
+        }
+        // show filter 
+        .showfilter {
+            width: 80%;
+            border: 1px solid $platinum;
+            div {
+                margin: 10px;
+                border: 1px solid $black;
+                border-radius: 20px;
+                span {
+                    margin-left: 5px;
+                }
+            }
+        }
+        div {
+            width: 80%;
+            border: 1px solid $platinum;
         }
     }
     main {
@@ -34,6 +47,7 @@
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
         section {
+            margin-bottom: 30px;
             text-align: center;
             div {
                 img {

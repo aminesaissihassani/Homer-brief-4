@@ -7,83 +7,122 @@
         <title>Gallery</title>
         <script src="https://kit.fontawesome.com/eb86766cbf.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/styles.css">
+        <script src="js/filter.js"></script>
     </head>
     <body>
         <header></header>
 
+
+        <!-- the bodyier -->
         <div class="boder">
+            <!-- the filter -->
             <div class="filter">
                 <h2>Filter</h2>
-                <div class="showfilter"></div>
+                <div class="showfilter" id="showfilter">
+                    
+                </div>
                 <div>
-                    <input type="text" placeholder="Book's Name">
+                    <input id="booksnamefilter" value="" type="text" placeholder="Book's Name">
                     <label for="booksnamebtn"><i class="fas fa-plus-circle"></i></label>
-                    <input id="booksnamebtn" type="button" class="plusbtnnone">
+                    <input id="booksnamebtn" type="button" class="btnnone" onclick="filterBook();">
                 </div>
                 <div>
-                    <input type="text" placeholder="Author's Name">
+                    <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name">
                     <label for="authorsnamebtn"><i class="fas fa-plus-circle"></i></label>
-                    <input id="authorsnamebtn" type="button" class="plusbtnnone">
+                    <input id="authorsnamebtn" type="button" class="btnnone" onclick="filterAuthor();">
                 </div>
-                <div>
-                    <input type="text" placeholder="Book's Date">
-                    <label for="authorsnamebtn"><i class="fas fa-plus-circle"></i></label>
-                    <input id="authorsnamebtn" type="button" class="plusbtnnone">
-                </div>
-                <select name="sort" id="sort">
-                    <option disabled selected>Sort by</option>
-                    <option value="asc">Lowest price to highest</option>
-                    <option value="desc">Highest price to lowest</option>
-                </select>
             </div>
+            <!-- the books show-->
             <main>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price"><span id="price">10</span>$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">Victor Hugo</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">Victor Hugo</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
                 <section>
                     <div><img src="img/books.jpg" alt="books"></div>
-                    <h4 id="title" class="title">My book cover</h4>
-                    <h4 id="author" class="author">My name here</h4>
-                    <h4 id="price" class="price">10$</h4>
+                    <h4 class="title">No u</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
+                </section>
+                <section>
+                    <div><img src="img/books.jpg" alt="books"></div>
+                    <h4 class="title">My book cover</h4>
+                    <h4 class="author">My name here</h4>
+                    <h4><span class="price">10</span>$</h4>
                 </section>
             </main>
         </div>
