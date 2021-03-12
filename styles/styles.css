@@ -148,6 +148,11 @@
   text-align: center;
 }
 
+.boder .filter select {
+  border: 1px solid #E5E5E5;
+}
+
+.boder .filter .plusbtnnone {
 .boder .filter .btnnone {
   display: none;
 }
