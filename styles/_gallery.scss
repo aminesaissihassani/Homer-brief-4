@@ -1,0 +1,45 @@
+
+*{
+    outline: none !important;
+}
+.boder {
+    display: flex;
+    .filter {
+        @include flexCenter(column);
+        margin: 30px 5px;
+        width: 20%;
+        height: 100%;
+        input {
+            border: none;
+            &::placeholder {
+                text-align: center;
+            }
+        }
+    
+        select {
+            border: 1px solid $platinum;
+        }
+        .plusbtnnone {
+            display: none;
+        }
+        label {
+            i {
+                color: $orangeWeb;
+            }
+        }
+    }
+    main {
+        margin: 30px 5px;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        section {
+            text-align: center;
+            div {
+                img {
+                    width: 85%;
+                }
+            }
+        }
+    }
+}
