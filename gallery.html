@@ -8,9 +8,40 @@
         <script src="https://kit.fontawesome.com/eb86766cbf.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/styles.css">
         <script src="js/filter.js"></script>
+        <script src="js/navbar.js"></script>
     </head>
     <body>
-        <header></header>
+        <header>
+            <img class="logo" src="images/homer.png">
+            <div class="navmenu" id="navmenu">
+                <input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
+                <label for="check" class="menu">
+                    <p>Menu</p>
+                </label>
+            </div>
+            <div class="navcont navhide">
+                <a href="index.html">Home</a>
+                <a href="Gallerie.html">Gallary</a>
+                <a href="AddBooks.html">Books</a>
+                <a href="AddAuthors.html">Authors</a>
+            </div>
+            <div class="login navhide">
+                <button class="in">Sign in</button>
+                <button class="up">Sign Up</button>
+            </div>
+            <div id="navhide">
+                <div class="navcont navhide">
+                    <a href="index.html">Home</a>
+                    <a href="Gallerie.html">Gallary</a>
+                    <a href="AddBooks.html">Books</a>
+                    <a href="AddAuthors.html">Authors</a>
+                </div>
+                <div class="login navhide">
+                    <button class="in">Sign in</button>
+                    <button class="up">Sign Up</button>
+                </div>
+            </div>
+        </header>
 
 
         <!-- the bodyier -->

@@ -21,6 +21,7 @@
         label {
             i {
                 color: $orangeWeb;
+                float:right;
             }
         }
         // show filter 
@@ -55,5 +56,23 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .boder {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .filter {
+            width: 100%;
+            div {
+                width:80%;
+            }
+        }
+        main {
+            grid-template-columns: 50% 50%;
+        }
+        
     }
 }
