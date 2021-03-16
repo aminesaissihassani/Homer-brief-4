@@ -89,9 +89,7 @@ header #navhide {
     padding-bottom: 20px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'logo . . . navmenu'
- 'navhide navhide navhide navhide navhide'
- 'navhide navhide navhide navhide navhide';
+        grid-template-areas: 'logo . . . navmenu' 'navhide navhide navhide navhide navhide' 'navhide navhide navhide navhide navhide';
   }
   header .navhide {
     display: none;
@@ -102,8 +100,7 @@ header #navhide {
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
     grid-area: navhide;
-        grid-template-areas: 'login login login login login'
- 'navcont navcont navcont navcont navcont';
+        grid-template-areas: 'login login login login login' 'navcont navcont navcont navcont navcont';
   }
   header #navhide .navcont {
     -ms-grid-row: 2;
