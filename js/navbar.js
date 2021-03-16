@@ -3,5 +3,6 @@ function menu(me) {
         document.getElementById("navhide").style.display = "grid";
     } else {
         document.getElementById("navhide").style.display = "none";
+        
     }
 }

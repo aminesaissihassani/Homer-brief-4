@@ -12,6 +12,7 @@ function filterBook()
             '<input id="' + idBooksName + '" type="button" class="btnnone fBook" onclick="removeFilter(this, filterBooks);">' +
         '</div>';
     filterBooks.push(booksName);
+    
 
     // filtring 
 
