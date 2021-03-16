@@ -1,5 +1,7 @@
 @import "./colors";
 @import "./functions";
+@import "./navstyle";
+@import "./footerstyle";
 *{
   margin: 0;
   padding: 0;
@@ -80,7 +82,7 @@
   }
   
   h1{
-    font-size: 5vw;
+    font-size: 4vw;
     font-family: Rockwell;
     // margin-bottom: 10px;
   }
@@ -91,7 +93,7 @@
     display: none;
   }
   p{
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: Rockwell;
     color: #8D8E93;
   }
@@ -99,7 +101,7 @@
     margin: 15px;
     font-family: Rockwell;
     // margin-top: 60px;
-    font-size: 3vw;
+    font-size: 2vw;
     width:  50%;
     height: 5vw;
     border-radius: 30px;
@@ -126,7 +128,7 @@
 }
 @media only screen and (max-width: 800px) 
 {
-  .titlens{
+  .titlens,.titlectg{
     font-size: 6vw;
   }
   .contintro,.BestS{
@@ -406,7 +408,7 @@
     margin-left: 60px;
     
     h1{
-        font-size: 70px;
+        font-size: 2vw;
         font-family: Rockwell;
         margin-bottom: 10px;
     }
@@ -452,7 +454,7 @@
       left: -550px ;
     }
        .titlens{
-         font-size: 5vw;
+         font-size: 4vw;
          color: #3D405B;
         margin-top: 100px;
          margin-bottom: -30px;
@@ -483,7 +485,7 @@
         display: flex;
         
         h1{
-            font-size: 70px;
+            font-size: 2vw;
             font-family: Rockwell;
             margin-bottom: 10px;
         }
@@ -520,7 +522,7 @@
 
 .titlectg{
   text-align: center;
-  font-size: 70px;
+  font-size: 4vw;
   color: #3D405B;
 }
  .ctg {
@@ -645,7 +647,7 @@
 
 @media only screen and (max-width: 800px) 
 {
-  .titlens{
+  .titlens,.titlectg{
     font-size: 10vw;
   }
 }
