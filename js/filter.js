@@ -16,6 +16,7 @@ function filterBook()
     // filtring 
 
     filter();
+
 }
 
 function filterAuthor()
