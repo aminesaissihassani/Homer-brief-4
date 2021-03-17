@@ -1,3 +1,247 @@
+/* NavBar Start */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: #fff;
+  padding: 20px;
+  -webkit-box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
+  padding-bottom: 0;
+  font-family: "Javanese Text";
+}
+
+header .logo {
+  margin-top: 0.5%;
+  width: 240px;
+  height: 60px;
+}
+
+header .navcont {
+  position: relative;
+  margin-left: 10%;
+  margin-top: 4%;
+  width: 60%;
+}
+
+header a {
+  color: #000;
+  text-decoration: none;
+  padding-right: 10%;
+  font-size: 20px;
+}
+
+header .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header .login button {
+  width: 110px;
+  height: 49px;
+  border-radius: 12px;
+  background: #fff;
+  margin: 2%;
+  border: 1px solid #fca311;
+  -webkit-box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+          box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+header .login button.in {
+  color: #fca311;
+  background-color: white;
+}
+
+header .login button.up {
+  background-color: #fca311;
+  color: white;
+}
+
+header .navmenu {
+  display: none;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+header #check {
+  display: none;
+}
+
+header #navhide {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    padding-bottom: 20px;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'logo . . . navmenu' 'navhide navhide navhide navhide navhide' 'navhide navhide navhide navhide navhide';
+  }
+  header .navhide {
+    display: none;
+  }
+  header #navhide {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-area: navhide;
+        grid-template-areas: 'login login login login login' 'navcont navcont navcont navcont navcont';
+  }
+  header #navhide .navcont {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-area: navcont;
+    margin-left: 60px;
+  }
+  header #navhide .login {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-area: login;
+  }
+  header .logo {
+    width: 140px;
+    height: auto;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  header .navmenu {
+    display: block;
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: navmenu;
+    text-align: center;
+  }
+}
+
+/* NavBar End */
+footer form input, footer form button {
+  height: 30px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+footer {
+  background: #14213d;
+  border: 1px solid #707070;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 10px;
+  position: relative;
+  color: #fca311;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+footer form.contact {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 30%;
+  height: 100%;
+  margin-top: 0;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+
+footer form.contact label {
+  font-family: Rockwell;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  color: #e6e6e6;
+}
+
+footer form.contact .sub {
+  text-align: center;
+  background-color: #fca311;
+  color: white;
+}
+
+footer .follow {
+  padding: 2px;
+  margin: 3px;
+  margin-left: 20px;
+  width: 50%;
+  height: 100%;
+}
+
+footer .follow p {
+  font-family: Rockwell;
+  font-weight: bold;
+  text-align: left;
+  color: #9c9c9c;
+  font-size: 20px;
+}
+
+footer .follow .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+footer .follow .social img {
+  width: 40px;
+  margin: 15px;
+}
+
+footer .follow div.lgftr img {
+  width: 20%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+}
+
+footer h3 {
+  font-family: Rockwell;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  color: #fca311;
+  width: 30%;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #ffe9c6;
+  margin-bottom: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
