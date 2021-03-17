@@ -1,6 +1,7 @@
 var filterBooks = [];
 var filterAuthors = [];
 
+
 function filterBook()
 {
     // adding the name to the filter show
