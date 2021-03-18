@@ -58,7 +58,7 @@ $data = mysqli_fetch_array($qry);
 		</form>
 		</div>
 </section>
-<h2>AUTHORS List</h2>
+
 
 <footer>
 	<div class="follow">
