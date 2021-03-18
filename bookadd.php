@@ -27,7 +27,7 @@ $res2=mysqli_query($connect,$query2);
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
 </head>
 <body>
