@@ -8,7 +8,12 @@ $data = mysqli_fetch_array($qry);
 
 $selc="SELECT Id_author FROM bookauthor as atr where  atr.Id_book=$id";
 $res2=mysqli_query($link,$selc);
-$dataselec= mysqli_fetch_array($res2); 
+$arr = array();
+while($dataselec= mysqli_fetch_array($res2))
+{
+	$arr[] =$dataselec['Id_author'];
+}
+
 $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
 $res=mysqli_query($link,$query);
 
@@ -25,6 +30,39 @@ $res=mysqli_query($link,$query);
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.dropdown {
+   position: relative;
+}
+.selected{
+	cursor: pointer;
+}
+.options {
+	width: 80%;
+  position: absolute;
+  left: 0;
+  display: none;
+  border: none;
+  list-style: none;
+  margin: 0;
+  padding:0;
+  max-height: 60px;
+  overflow-y: scroll;
+}
+
+#checkboxes label {
+  display: block;
+}
+input[type="checkbox"]{
+	    border: 1px solid white;
+    border-bottom: 1px solid #474646;
+     width: auto; 
+     height:auto; 
+     margin-bottom: 0px; 
+    color: #fca311;
+    font-weight: bold;
+}
+	</style>
 </head>
 <body>
 <header>
@@ -59,11 +97,28 @@ $res=mysqli_query($link,$query);
 				<input type="text" id="prodate" name="prodate" placeholder="PRODUCTION DATE" onfocus="(this.type='date')" onblur="(this.type='text')" value="<?php echo $data['prod_date']?>""> 
 			</div>
 			<div class="inp">
-                    <select id="aid" name="authorid" > 
-						<?php while($row = mysqli_fetch_assoc($res)) {?>
-                            <option  value = "<?php echo $row['ID']?>" <?php if($row['ID']== $dataselec['Id_author']) echo 'selected="selected"'; ?>><?php echo $row['A_name'] ?></option>
-                            <?php }?>
-					</select>
+				<div class="dropdown">
+		
+		 		 		<input class="selected" onclick="showCheckboxes()" id="nameAth" type="text" placeholder="Select book author(s)" readonly>
+		  				<div class="options" id="checkboxes">
+						  <?php  while($row = mysqli_fetch_assoc($res))
+							{?>
+		      		<label for="<?php echo $row['A_name']?>">
+		       		 <input type="checkbox" name="author[]" id="<?php echo $row['A_name']?>" value="<?php echo $row['ID']?>" onchange="show();" 
+						 <?php foreach ($arr as $x) {
+							  if($x== $row['ID'])
+							    {
+           							 echo "checked";
+									}
+								}
+								?>
+					 /><?php echo $row['A_name']?></label>
+						<?php }?>
+						
+		    		</div>
+					
+		 
+				</div>
 			</div>
 			<div class="btn">
 				<button>+</button>
@@ -115,6 +170,44 @@ $res=mysqli_query($link,$query);
 		img.src = URL.createObjectURL(event.target.files[0]);
 		
 	}
+</script>
+
+
+<script type="text/javascript">
+	show();
+	var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+function show(){
+	
+	
+	var isChecked=document.getElementById('nameAth');
+	isChecked.value ='';
+    var elems= document.querySelectorAll('input[type="checkbox"]:checked');
+                for (var i=0;i<elems.length;i++)
+                {
+                     isChecked.value +=elems[i].id+' / ';
+					 
+              
+                    
+                }
+                // alert(isChecked[i]);
+                // for (var i=0;i<isChecked.length;i++)
+                // {
+                //     alert(isChecked[i]);
+                // }
+               
+}
+
 </script>
 </body>
 </html>

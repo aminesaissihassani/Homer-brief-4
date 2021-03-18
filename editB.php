@@ -17,6 +17,7 @@ $img= $_FILES['flup']['name'];
 $imgsrc= $_FILES['flup']['tmp_name'];
 $folderLocation = "images";
 $path="$folderLocation/".$img;
+$authors=$_POST['author'];
 move_uploaded_file($imgsrc,$path);
 if(empty($img)){
     $sql = "UPDATE book set b_name='$bookName',price='$bookprice',prod_date='$prodate' where ID='$bid' ";
@@ -33,13 +34,19 @@ if($s2=0){
     echo "<script> alert('ERROR: Could not able to execute $sql')</script> " ;
 }
 
+$sq = "DELETE FROM bookauthor where Id_book=$bid ";
+$s=mysqli_query($link, $sq);
+
+foreach($authors as $a){
+   
+    $sql2 = "INSERT INTO bookauthor (Id_book,Id_author) VALUES ($bid,$a)";
+    $s=mysqli_query($link, $sql2);
+    if($s=0){
+        echo "ERROR: Could not able to execute $sql2. " . mysqli_error($link);
+    } 
+}
 
 
-$sql2 = "UPDATE bookauthor set Id_author='$aid' where Id_book ='$bid' "  ;
-$s=mysqli_query($link, $sql2);
-if($s=0){
-    echo "ERROR: Could not able to execute $sql2. " . mysqli_error($link);
-} 
 
   header("Location: bookadd.php");
 // Close connection

@@ -1,0 +1,274 @@
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #fca311;
+			font-family: "Javanese Text";
+
+		}
+		header{
+			display: flex;
+			flex-direction: row;
+			/* width: 100%; */
+			align-content: center;
+			background: #fff;
+			padding: 20px;
+			box-shadow:0px 3px 40px rgba(0, 0, 0, 0.16);
+			padding-bottom: 0;
+		}
+		header .logo{
+			/* position: absolute; */
+			/* float: left; */
+			margin-top: 0.5%;
+			width: 240px;
+			height: 60px;
+		}
+		header .navcont{
+			position: relative;
+			margin-left: 10%;
+			margin-top: 4%;
+			width: 60%;
+
+		}
+		header .navcont a{
+		color: #000;
+		text-decoration: none;
+		padding-right: 10%;
+		font-size: 20px;
+		}
+		header .login{
+			display: flex;
+			flex-direction: row;
+		}
+		header .login button{
+		width: 110px;
+		height: 49px;
+		border-radius: 12px;
+		background: #fff;
+		margin: 2%;
+		border: 1px solid #fca311;
+		box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+		font-weight: bold;
+		font-size: 20px;
+		}
+		header .login button.in{
+			color: #fca311 ;
+			background-color: white;
+
+		}
+		header .login button.up{
+			background-color: #fca311 ;
+			color: white;
+
+		}
+		
+		.Add{
+			background-color: white;
+			width: 60%;
+			margin: 13px;
+			box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+			border-radius: 10px;
+			/* text-align: center; */
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			margin-bottom: 100px;
+			transform: translate(30%,10%);
+
+		}
+		#addpc{
+			width: 20%;
+			height: 60%;
+			margin: 10%;
+			
+		}
+		form{
+			width: 70%;
+			margin-top: 10%;
+			margin-right: 5%;
+		}
+		
+/* input:focus {} */
+		form div input{
+			border: 1px solid white;
+			border-bottom: 1px solid rgb(71, 70, 70);
+			width: 100%;
+			height: 30px;
+			margin-bottom: 20px;
+
+		}
+		form div.inp input::placeholder{
+			color: #fca311;
+			font-weight: bold;
+		}
+		form div input:focus{
+			border-bottom: 1px solid rgb(71, 70, 70);
+			outline:none!important;
+		}
+		form div.btn button{
+			border-radius: 50%;
+			background-color:#fca311 ;
+			color: white;
+			border: none;
+			font-size: 50px;
+			float: right;
+			width: 50px;
+		}
+		
+		table{
+			background-color: white;
+			width:80%;
+			margin: 100px;
+			padding: 15px;
+			box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+		
+		}
+		table tr{
+
+			margin-bottom: 10%;
+			
+		}
+		
+		th{
+			color: #fca311;
+		}
+		table img{
+			height: 30%;
+			align-items: center;
+		}
+		table td{
+			text-align: center;
+			font-weight: bold;
+			padding: 0;
+			margin: 0;
+			/* border: 1px solid black; */
+		
+			/* width: 100%; */
+		}
+		table tr td label{
+			border: 1px solid black;
+			font-weight: bold;
+			padding:0 5px;
+			margin-bottom: 100px;
+		}
+		table tr td:last-child,table tr td:nth-child(5){
+			
+			border: none;
+
+		}
+		table tr td:last-child img{
+			margin-right: 10px;
+			height: 30px;
+		}
+		/* table {
+			border-spacing: 15px;
+			/* text-align: center; */
+		/* }
+		table tr {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: 20px;
+			margin-bottom: 5px;
+		}
+	
+		table tr td{
+			display: flex;
+			justify-content: space-between;
+			margin-right: 5px;
+		}
+		table tr th{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			margin-right: 5px;
+		} */ 
+
+
+		footer{
+			/* width: 100%; */
+			/* overflow-x: hidden;*/
+		
+			background: #14213d;
+			border: 1px solid #707070;
+			display: flex;
+			flex-direction: row;
+			padding-top: 10px;
+			position: relative;
+			color: #fca311;
+
+		}
+		footer form.contact {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-content: space-around;
+			width: 50%;
+			height: 100%;
+			margin-top: 0;
+			padding: 5px 100px;
+			margin-left: 200px;
+			margin-bottom: 20px;
+			/* padding-top: 0; */
+		}
+		footer form.contact label{
+			font-family: Rockwell;
+			font-weight: bold;
+			font-size: 15px;
+			text-align: left;
+			color: #e6e6e6;
+
+		}
+		footer form.contact input,footer form.contact button{
+			
+			height: 30px;
+			border-radius: 8px;
+			background: #fff;
+			border: 1px solid #707070;
+		}
+		footer form.contact .sub{
+			text-align: center;
+			background-color: #fca311 ;
+			color: white;
+		}
+		footer .follow{
+			padding: 2px;
+			margin: 3px;
+			width: 50%;
+			height: 100%;
+		}
+		footer .follow p{
+			font-family: Rockwell;
+			font-weight: bold;
+			/* font-size: 38px; */
+			text-align: left;
+			color: #9c9c9c;
+			font-size:20px;
+
+		}
+		footer .follow .social{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+		}
+		footer .follow .social img{
+			width: 40px;
+			margin: 15px;
+		}
+
+		footer h3{
+			font-family: Rockwell;
+			font-weight: bold;
+			font-size: 20px;
+			text-align: left;
+			color: #fca311;
+			width: 200px;
+			padding-bottom: 10px;
+			border-bottom: 4px solid #ffe9c6;
+			margin-bottom: 20px;
+		}
+		
+	</style>

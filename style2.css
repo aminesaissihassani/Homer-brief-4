@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  border-bottom: 1px solid #474646;
+  outline: none !important;
+}
+
+footer form input, footer form button {
+  height: 30px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+body {
+  background: #fca311;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #fff;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  padding-right: 0;
+  margin-right: 0;
+  -webkit-box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
+  padding-bottom: 0;
+  font-family: "Javanese Text";
+}
+
+header .logo {
+  margin-top: 0.5%;
+  width: 240px;
+  height: 60px;
+}
+
+header .menub {
+  display: none;
+}
+
+header .navcont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 3%;
+  width: 60%;
+}
+
+header .navcont .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .navcont .nav a {
+  color: #000;
+  text-decoration: none;
+  padding-right: 10%;
+  font-size: 2vw;
+  margin: 10px;
+}
+
+header .navcont .nav button {
+  border-radius: 12px;
+  background: #fff;
+  padding: 2%;
+  border: 1px solid #fca311;
+  -webkit-box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+          box-shadow: 0px 3px 40px rgba(114, 114, 114, 0.16);
+  font-weight: bold;
+  margin-left: 2px;
+  width: 20vw;
+}
+
+header .navcont .nav button.in {
+  color: #fca311;
+  background-color: white;
+}
+
+header .navcont .nav button.up {
+  background-color: #fca311;
+  color: white;
+}
+
+form {
+  width: 70%;
+  margin-top: 10%;
+  margin-right: 5%;
+}
+
+form div input {
+  border: 1px solid white;
+  border-bottom: 1px solid #474646;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+form div:focus {
+  border-bottom: 1px solid #474646;
+  outline: none !important;
+}
+
+form div.inp input::-webkit-input-placeholder {
+  color: #fca311;
+  font-weight: bold;
+}
+
+form div.inp input:-ms-input-placeholder {
+  color: #fca311;
+  font-weight: bold;
+}
+
+form div.inp input::-ms-input-placeholder {
+  color: #fca311;
+  font-weight: bold;
+}
+
+form div.inp input::placeholder {
+  color: #fca311;
+  font-weight: bold;
+}
+
+form div.btn button {
+  border-radius: 50%;
+  background-color: #fca311;
+  color: white;
+  border: none;
+  font-size: 50px;
+  float: right;
+  width: 60px;
+}
+
+footer {
+  background: #14213d;
+  border: 1px solid #707070;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 10px;
+  position: relative;
+  color: #fca311;
+}
+
+footer form.contact {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 50%;
+  height: 100%;
+  margin-top: 0;
+  padding: 5px 100px;
+  margin-left: 200px;
+  margin-bottom: 20px;
+}
+
+footer form.contact label {
+  font-family: Rockwell;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  color: #e6e6e6;
+}
+
+footer form.contact .sub {
+  text-align: center;
+  background-color: #fca311;
+  color: white;
+}
+
+footer .follow {
+  padding: 2px;
+  margin: 3px;
+  width: 50%;
+  height: 100%;
+}
+
+footer .follow p {
+  font-family: Rockwell;
+  font-weight: bold;
+  text-align: left;
+  color: #9c9c9c;
+  font-size: 20px;
+}
+
+footer .follow .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+footer .follow .social img {
+  width: 40px;
+  margin: 15px;
+}
+
+footer .follow div.lgftr img {
+  width: 20%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+}
+
+footer h3 {
+  font-family: Rockwell;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  color: #fca311;
+  width: 200px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #ffe9c6;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=style2.css.map */
