@@ -8,7 +8,7 @@
   outline: none !important;
 }
 
-footer form input, footer form button {
+footer form.contact input, footer form.contact button {
   height: 30px;
   border-radius: 8px;
   background: #fff;
@@ -121,19 +121,19 @@ h2 {
   z-index: 1;
 }
 
-#addpc {
+.Add #addpc, .Addart #addpc {
   width: 25%;
   height: 250px;
   margin: 10%;
 }
 
-form {
+.Add form, .Addart form {
   width: 70%;
   margin-top: 10%;
   margin-right: 5%;
 }
 
-form div input, form div select {
+.Add form div input, .Add form div select, .Addart form div input, .Addart form div select {
   border: 1px solid white;
   border-bottom: 1px solid #474646;
   width: 100%;
@@ -143,32 +143,32 @@ form div input, form div select {
   font-weight: bold;
 }
 
-form div:focus {
+.Add form div:focus, .Addart form div:focus {
   border-bottom: 1px solid #474646;
   outline: none !important;
 }
 
-form div.inp input::-webkit-input-placeholder {
+.Add form div.inp input::-webkit-input-placeholder, .Addart form div.inp input::-webkit-input-placeholder {
   color: #fca311;
   font-weight: bold;
 }
 
-form div.inp input:-ms-input-placeholder {
+.Add form div.inp input:-ms-input-placeholder, .Addart form div.inp input:-ms-input-placeholder {
   color: #fca311;
   font-weight: bold;
 }
 
-form div.inp input::-ms-input-placeholder {
+.Add form div.inp input::-ms-input-placeholder, .Addart form div.inp input::-ms-input-placeholder {
   color: #fca311;
   font-weight: bold;
 }
 
-form div.inp input::placeholder {
+.Add form div.inp input::placeholder, .Addart form div.inp input::placeholder {
   color: #fca311;
   font-weight: bold;
 }
 
-form div.btn button {
+.Add form div.btn button, .Addart form div.btn button {
   border-radius: 50%;
   background-color: #fca311;
   color: white;
@@ -176,6 +176,41 @@ form div.btn button {
   font-size: 50px;
   float: right;
   width: 60px;
+}
+
+.Add form div.dropdown, .Addart form div.dropdown {
+  position: relative;
+}
+
+.Add form div .selected, .Addart form div .selected {
+  cursor: pointer;
+}
+
+.Add form div .options, .Addart form div .options {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  display: none;
+  border: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 60px;
+  overflow-y: scroll;
+}
+
+.Add form div #checkboxes label, .Addart form div #checkboxes label {
+  display: block;
+}
+
+.Add form div input[type="checkbox"], .Addart form div input[type="checkbox"] {
+  border: 1px solid white;
+  border-bottom: 1px solid #474646;
+  width: auto;
+  height: auto;
+  margin-bottom: 0px;
+  color: #fca311;
+  font-weight: bold;
 }
 
 table {
@@ -272,6 +307,7 @@ footer {
 
 footer form.contact {
   position: relative;
+  margin-right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,11 +317,15 @@ footer form.contact {
           flex-direction: column;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  width: 30%;
+  width: 500px;
   height: 100%;
   margin-top: 0;
   padding: 5px 10px;
   margin-bottom: 20px;
+}
+
+footer form.contact div {
+  margin-bottom: 14px;
 }
 
 footer form.contact label {
@@ -302,11 +342,15 @@ footer form.contact .sub {
   color: white;
 }
 
+footer form.contact input {
+  width: 100%;
+}
+
 footer .follow {
   padding: 2px;
   margin: 3px;
   margin-left: 20px;
-  width: 50%;
+  width: 500px;
   height: 100%;
 }
 
