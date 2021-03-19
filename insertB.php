@@ -54,7 +54,7 @@ if($s=0){
     echo "ERROR: Could not able to execute $sql2. " . mysqli_error($link);
 } 
 }
-  header("Location: addbokklistautthor.php");
+  header("Location: bookadd.php");
 
 // Close connection
 mysqli_close($link);

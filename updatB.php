@@ -28,50 +28,18 @@ $res=mysqli_query($link,$query);
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-	<style type="text/css">
-		.dropdown {
-   position: relative;
-}
-.selected{
-	cursor: pointer;
-}
-.options {
-	width: 80%;
-  position: absolute;
-  left: 0;
-  display: none;
-  border: none;
-  list-style: none;
-  margin: 0;
-  padding:0;
-  max-height: 60px;
-  overflow-y: scroll;
-}
 
-#checkboxes label {
-  display: block;
-}
-input[type="checkbox"]{
-	    border: 1px solid white;
-    border-bottom: 1px solid #474646;
-     width: auto; 
-     height:auto; 
-     margin-bottom: 0px; 
-    color: #fca311;
-    font-weight: bold;
-}
-	</style>
 </head>
 <body>
 <header>
 	<img class="logo" src="images/homer.png">
 		<div class="navcont">
-			<a href="index.html">Home</a>
+		<a href="index.html">Home</a>
 			<a href="Gallerie.html">Gallary</a>
-			<a href="AddBooks.html">Books</a>
-			<a href="AddAuthors.html">Authors</a>
+			<a href="bookadd.php">Books</a>
+			<a href="authoradd.php">Authors</a>
 		  </div>
 		  <div class="login">
 			  <button class="in">Sign in</button>
@@ -84,7 +52,7 @@ input[type="checkbox"]{
 		
 			<img src="<?php echo $data['img']?>" id="addpc" onclick="upld()">
 			
-		<form action="editB.php"  method="post" enctype="multipart/form-data">
+		<form name="bookform"  onsubmit="validation();" action="editB.php"  method="post" enctype="multipart/form-data">
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="flup" hidden>
 			<div class="inp">
                 <input type="text" name="idb" value="<?php echo $id?>" readonly hidden>
@@ -159,55 +127,6 @@ input[type="checkbox"]{
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
-
-
-<script type="text/javascript">
-	show();
-	var expanded = false;
-
-function showCheckboxes() {
-  var checkboxes = document.getElementById("checkboxes");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-function show(){
-	
-	
-	var isChecked=document.getElementById('nameAth');
-	isChecked.value ='';
-    var elems= document.querySelectorAll('input[type="checkbox"]:checked');
-                for (var i=0;i<elems.length;i++)
-                {
-                     isChecked.value +=elems[i].id+' / ';
-					 
-              
-                    
-                }
-                // alert(isChecked[i]);
-                // for (var i=0;i<isChecked.length;i++)
-                // {
-                //     alert(isChecked[i]);
-                // }
-               
-}
-
-</script>
+<script src="js/upbook.js"></script>
 </body>
 </html>
