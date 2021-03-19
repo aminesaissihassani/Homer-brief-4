@@ -7,22 +7,43 @@
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/footerf.css">
+    <script src="js/navbar.js"></script>
 
 </head>
 <body>
-<header>
-	<img class="logo" src="images/homer.png">
-		<div class="navcont">
+    <header>
+		<img class="logo" src="images/homer.png">
+		<div class="navmenu" id="navmenu">
+			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
+			<label for="check" class="menu">
+				<p>Menu</p>
+			</label>
+		</div>
+		<div class="navcont navhide">
 			<a href="index.html">Home</a>
-			<a href="Gallerie.html">Gallary</a>
+			<a href="gallery.html">Gallary</a>
 			<a href="AddBooks.html">Books</a>
 			<a href="AddAuthors.html">Authors</a>
-		  </div>
-		  <div class="login">
-			  <button class="in">Sign in</button>
-			  <button class="up">Sign Up</button>
-		  </div>
-</header>
+		</div>
+		<div class="login navhide">
+			<button class="in">Sign in</button>
+			<button class="up">Sign Up</button>
+		</div>
+		<div id="navhide">
+			<div class="navcont navhide">
+				<a href="index.html">Home</a>
+				<a href="gallery.html">Gallary</a>
+				<a href="AddBooks.html">Books</a>
+				<a href="AddAuthors.html">Authors</a>
+			</div>
+			<div class="login navhide">
+				<button class="in">Sign in</button>
+				<button class="up">Sign Up</button>
+			</div>
+		</div>
+	</header>
 <section class="bod">
 	<h2 class="titleadd">UPDATE BOOKS</h2>
 	<div class="Add">
@@ -72,7 +93,13 @@
 			<img src="images/instagram.png">
 			<img src="images/twitter.png">
 		</div>
-		<!-- <div class="lgftr"><img src="images/hmr.png"></div> -->
+		
+		<div class="app">
+			
+			<img src="images/as.png" alt="appstore">
+			<img src="images/ps.png" alt="playstore">
+		</div>
+		<!-- <h4>Get Homer app</h4> -->
 	</div>
 		<form class="contact"><h3>Contact Us</h3>
 			<div>
@@ -93,6 +120,7 @@
 		</form>
 
 </footer>
+<div class="cp">&copy; CopyRight 2021 All Right Reserved by Homer.ml</div>
 <script src="js/addbookjs.js"></script>
 </body>
 </html>
