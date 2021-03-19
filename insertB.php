@@ -13,14 +13,17 @@ if($link === false){
 $bookName = $_POST['booktit'];
 $bookprice = $_POST['bookprice'];
 $prodate = $_POST['prodate'];
-$authorid = $_POST['authorid'];
-$aid = (int)$authorid;
+// $authorid = $_POST['authorid'];
+// $aid = (int)$authorid;
 $img= $_FILES['flup']['name'];
 $imgsrc= $_FILES['flup']['tmp_name'];
 $folderLocation = "images";
 $path="$folderLocation/".$img;
 move_uploaded_file($imgsrc,$path);
-
+$authors=$_POST['author'];
+// echo "<pre>";
+// print_r($authors);
+// echo "</pre>";
 
 // Escape user inputs for security
 // $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
@@ -43,13 +46,14 @@ $id =  $row['ID'];
 
 $bid = (int)$id;
 
-
-$sql2 = "INSERT INTO bookauthor (Id_book,Id_author) VALUES ($bid,$aid)";
+foreach($authors as $a){
+   
+$sql2 = "INSERT INTO bookauthor (Id_book,Id_author) VALUES ($bid,$a)";
 $s=mysqli_query($link, $sql2);
 if($s=0){
     echo "ERROR: Could not able to execute $sql2. " . mysqli_error($link);
 } 
-
+}
   header("Location: bookadd.php");
 
 // Close connection

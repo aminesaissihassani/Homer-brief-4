@@ -15,7 +15,7 @@ $data = mysqli_fetch_array($qry);
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,8 +24,8 @@ $data = mysqli_fetch_array($qry);
 		<div class="navcont">
 			<a href="index.html">Home</a>
 			<a href="Gallerie.html">Gallary</a>
-			<a href="AddBooks.html">Books</a>
-			<a href="AddAuthors.html">Authors</a>
+			<a href="bookadd.php">Books</a>
+			<a href="authoradd.php">Authors</a>
 		  </div>
 		  <div class="login">
 			  <button class="in">Sign in</button>
@@ -38,7 +38,7 @@ $data = mysqli_fetch_array($qry);
 		
 			<img src="<?php echo $data['img']?>" id="addpc" onclick="upld()">
 			
-		<form class="athform" style="margin-top: 150px;" action="editA.php"  method="post" enctype="multipart/form-data">
+		<form  name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" action="editA.php"  method="post" enctype="multipart/form-data">
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="flup" hidden>
 			<div class="inp">
             <input type="text" name="idb" value="<?php echo $id?>" readonly hidden>
@@ -58,7 +58,6 @@ $data = mysqli_fetch_array($qry);
 		</form>
 		</div>
 </section>
-<h2>AUTHORS List</h2>
 
 <footer>
 	<div class="follow">
@@ -69,7 +68,6 @@ $data = mysqli_fetch_array($qry);
 			<img src="images/instagram.png">
 			<img src="images/twitter.png">
 		</div>
-		<!-- <div class="lgftr"><img src="images/hmr.png"></div> -->
 	</div>
 		<form class="contact"><h3>Contact Us</h3>
 			<div>
@@ -90,17 +88,6 @@ $data = mysqli_fetch_array($qry);
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
+<script src="js/upauthor.js"></script>
 </body>
 </html>

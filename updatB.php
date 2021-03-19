@@ -8,7 +8,12 @@ $data = mysqli_fetch_array($qry);
 
 $selc="SELECT Id_author FROM bookauthor as atr where  atr.Id_book=$id";
 $res2=mysqli_query($link,$selc);
-$dataselec= mysqli_fetch_array($res2); 
+$arr = array();
+while($dataselec= mysqli_fetch_array($res2))
+{
+	$arr[] =$dataselec['Id_author'];
+}
+
 $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
 $res=mysqli_query($link,$query);
 
@@ -23,17 +28,18 @@ $res=mysqli_query($link,$query);
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
 	<img class="logo" src="images/homer.png">
 		<div class="navcont">
-			<a href="index.html">Home</a>
+		<a href="index.html">Home</a>
 			<a href="Gallerie.html">Gallary</a>
-			<a href="AddBooks.html">Books</a>
-			<a href="AddAuthors.html">Authors</a>
+			<a href="bookadd.php">Books</a>
+			<a href="authoradd.php">Authors</a>
 		  </div>
 		  <div class="login">
 			  <button class="in">Sign in</button>
@@ -46,7 +52,7 @@ $res=mysqli_query($link,$query);
 		
 			<img src="<?php echo $data['img']?>" id="addpc" onclick="upld()">
 			
-		<form action="editB.php"  method="post" enctype="multipart/form-data">
+		<form name="bookform"  onsubmit="validation();" action="editB.php"  method="post" enctype="multipart/form-data">
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="flup" hidden>
 			<div class="inp">
                 <input type="text" name="idb" value="<?php echo $id?>" readonly hidden>
@@ -59,11 +65,28 @@ $res=mysqli_query($link,$query);
 				<input type="text" id="prodate" name="prodate" placeholder="PRODUCTION DATE" onfocus="(this.type='date')" onblur="(this.type='text')" value="<?php echo $data['prod_date']?>""> 
 			</div>
 			<div class="inp">
-                    <select id="aid" name="authorid" > 
-						<?php while($row = mysqli_fetch_assoc($res)) {?>
-                            <option  value = "<?php echo $row['ID']?>" <?php if($row['ID']== $dataselec['Id_author']) echo 'selected="selected"'; ?>><?php echo $row['A_name'] ?></option>
-                            <?php }?>
-					</select>
+				<div class="dropdown">
+		
+		 		 		<input class="selected" onclick="showCheckboxes()" id="nameAth" type="text" placeholder="Select book author(s)" readonly>
+		  				<div class="options" id="checkboxes">
+						  <?php  while($row = mysqli_fetch_assoc($res))
+							{?>
+		      		<label for="<?php echo $row['A_name']?>">
+		       		 <input type="checkbox" name="author[]" id="<?php echo $row['A_name']?>" value="<?php echo $row['ID']?>" onchange="show();" 
+						 <?php foreach ($arr as $x) {
+							  if($x== $row['ID'])
+							    {
+           							 echo "checked";
+									}
+								}
+								?>
+					 /><?php echo $row['A_name']?></label>
+						<?php }?>
+						
+		    		</div>
+					
+		 
+				</div>
 			</div>
 			<div class="btn">
 				<button>+</button>
@@ -104,17 +127,6 @@ $res=mysqli_query($link,$query);
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
+<script src="js/upbook.js"></script>
 </body>
 </html>

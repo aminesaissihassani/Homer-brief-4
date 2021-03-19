@@ -2,23 +2,32 @@
 $connect = mysqli_connect("localhost", "root", "", "library");
  $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
  $res=mysqli_query($connect,$query);
-$option = '';
- while($row = mysqli_fetch_assoc($res))
-{
-  $option .= '<option value = "'.$row['ID'].'">'.$row['A_name'].'</option>';
-}
 
 
 
 
-$query2="SELECT B.*,a.A_name FROM book as b,author as a,bookauthor as atr where B.ID=atr.Id_book and atr.Id_author=a.ID ORDER BY ID DESC";
+
+$query2="SELECT distinct B.* FROM book as b,bookauthor as atr where B.ID=atr.Id_book  ORDER BY ID DESC";
 $res2=mysqli_query($connect,$query2);
-// $tr = '';
-//  while($row = mysqli_fetch_assoc($res2))
-// {
-//   $tr .= '<tr><td><label>'.$row['ID'].'</label></td><td><label>'.$row['b_name'].'</label></td><td><label>'.$row['price'].'</label></td><td><label>'.$row['prod_date'].'</label></td><td><label>'.$row['img'].'</label></td><td><label>'.$row['A_name'].'</label></td><td><i class="fas fa-trash-alt op"  onclick="alert(\'deleted\')" ></i><i class="far fa-edit op" onclick="location.href=\'UpdateB.html\'"></i></td></tr>';
-// }
+
+$option = '';
+function listauthor($ib) {
+	global $option,$connect;
+	$option = '';
+	$qr="SELECT a.ID,a.A_name FROM author a,bookauthor ba where ba.Id_author=a.ID and  ba.Id_book=$ib ORDER BY ID ASC";
+	$res=mysqli_query($connect,$qr);
+
+	while($row = mysqli_fetch_assoc($res))
+	{
+		
+	$option .= '<option value = "'.$row['ID'].'">'.$row['A_name'].'</option>';
+	}
+}
  ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +38,7 @@ $res2=mysqli_query($connect,$query2);
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 
@@ -37,8 +47,8 @@ $res2=mysqli_query($connect,$query2);
 		<div class="navcont">
 			<a href="index.html">Home</a>
 			<a href="Gallerie.html">Gallary</a>
-			<a href="AddBooks.html">Books</a>
-			<a href="AddAuthors.html">Authors</a>
+			<a href="bookadd.php">Books</a>
+			<a href="authoradd.php">Authors</a>
 		  </div>
 		  <div class="login">
 			  <button class="in">Sign in</button>
@@ -51,21 +61,30 @@ $res2=mysqli_query($connect,$query2);
 		
 			<img src="images/addpic.png" id="addpc" onclick="upld()">
 			
-		<form action="insertB.php"  method="post" enctype="multipart/form-data">
+		<form name="bookform" onsubmit="validation();" action="insertB.php"  method="post" enctype="multipart/form-data">
 			<input type="file" name="flup" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" hidden>
 			<div class="inp">
 				<input type="text" id="title" name="booktit" placeholder="BOOK TITLE">
 			</div>
 			<div class="inp">
-				<input type="text" id="price" name="bookprice" placeholder="BOOK PRICE">
+				<input type="number" id="price" name="bookprice" placeholder="BOOK PRICE">
 			</div>
 			<div class="inp">
 				<input type="text" id="prodate" name="prodate" placeholder="PRODUCTION DATE" onfocus="(this.type='date')" onblur="(this.type='text')"> 
 			</div>
 			<div class="inp">
-				   <select id="aid" name="authorid"> 
-						<?php echo $option; ?>
-					</select>
+				<div class="dropdown">
+		
+		 		 		<input class="selected" onclick="showCheckboxes()" id="nameAth" type="text" placeholder="Select book author(s)" readonly>
+		  				<div class="options" id="checkboxes">
+						  <?php  while($row = mysqli_fetch_assoc($res))
+							{?>
+		      		<label for="<?php echo $row['A_name']?>">
+		       		 <input type="checkbox" name="author[]" id="<?php echo $row['A_name']?>" value="<?php echo $row['ID']?>" onchange="show();"/><?php echo $row['A_name']?></label>
+						<?php }?>
+		    		</div>
+		 
+				</div>
 			</div>
 			<div class="btn">
 				<button>+</button>
@@ -86,9 +105,7 @@ $res2=mysqli_query($connect,$query2);
 			<th>AUTHOR</th>
 			<th></th>
 		</tr>
-		<!-- <tr>
-		<?php echo $tr; ?>
-		</tr> -->
+	
 		<?php  while($row = mysqli_fetch_assoc($res2))
 {?>
 			 <tr>
@@ -97,7 +114,10 @@ $res2=mysqli_query($connect,$query2);
 				<td><label><?php echo $row['price']?></label></td>
 				<td><label><?php echo $row['prod_date']?></label></td>
 				<td><img src="<?php echo $row['img']?>"></td>
-				<td><label><?php echo $row['A_name']?></label></td>
+				<td> <?php listauthor($row['ID']); ?> <select id="aid" name="authorid"> 
+						
+						<?php echo $option; ?>
+					</select></td>
 				<td><a href="deleteb.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a> <a href="updatB.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
 			</tr>
 			<?php }?>
@@ -111,7 +131,6 @@ $res2=mysqli_query($connect,$query2);
 			<img src="images/instagram.png">
 			<img src="images/twitter.png">
 		</div>
-		<!-- <div class="lgftr"><img src="images/hmr.png"></div> -->
 	</div>
 		<form class="contact"><h3>Contact Us</h3>
 			<div>
@@ -132,17 +151,6 @@ $res2=mysqli_query($connect,$query2);
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
+<script src="js/addbookjs.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -20,8 +20,8 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 		<div class="navcont">
 			<a href="index.html">Home</a>
 			<a href="Gallerie.html">Gallary</a>
-			<a href="AddBooks.html">Books</a>
-			<a href="AddAuthors.html">Authors</a>
+			<a href="bookadd.php">Books</a>
+			<a href="authoradd.php">Authors</a>
 		  </div>
 		  <div class="login">
 			  <button class="in">Sign in</button>
@@ -34,7 +34,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 		
 			<img src="images/addpic.png" id="addpc"  onclick="upld()">
 			
-		<form class="athform" style="margin-top: 150px;" action="insertA.php"  method="post" enctype="multipart/form-data">
+		<form name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" action="insertA.php"  method="post" enctype="multipart/form-data">
  		 
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="apic" hidden>
 			<div class="inp">
@@ -107,17 +107,6 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
+<script src="js/author.js"></script>
 </body>
 </html>
