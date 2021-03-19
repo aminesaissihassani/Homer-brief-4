@@ -1,15 +1,10 @@
 var filterBooks = [];
 var filterAuthors = [];
 
-
 function filterBook()
 {
     // adding the name to the filter show
     var booksName = document.getElementById("booksnamefilter").value;
-    if (booksName == "")
-    {
-        return false;
-    }
     var idBooksName = booksName.replace(/ /g, "-");
     document.getElementById("showfilter").innerHTML += '<div class="' + idBooksName + '">' +
             '<span>' + booksName + '</span>' +
@@ -18,6 +13,7 @@ function filterBook()
         '</div>';
     filterBooks.push(booksName);
     
+
     // filtring 
 
     filter();
@@ -29,10 +25,6 @@ function filterAuthor()
     // adding the name to the filter show
 
     var authorsName = document.getElementById("authorsnamefilter").value;
-    if (authorsName == "")
-    {
-        return false;
-    }
     var idAuthorsName = authorsName.replace(/ /g, "-");
     document.getElementById("showfilter").innerHTML += '<div class="' + idAuthorsName + '">' +
             '<span>' + authorsName + '</span>' +
@@ -55,8 +47,7 @@ function filter()
     // var booklen = filterBooks.length;
     // var thereIs = false;
     // booksfilter
-    if(filterAuthors.length==0)
-    {
+    if(filterAuthors.length==0){
         for (var i = 0; i < secLen; i++)
         {
             for (var j in filterBooks)
@@ -73,8 +64,7 @@ function filter()
             }
         }
     }
-    if(filterBooks.length==0)
-    {
+    if(filterBooks.length==0){
         for (var i = 0; i < secLen; i++)
         {
             for (var j in filterAuthors)
@@ -91,17 +81,17 @@ function filter()
             }
         }
     }
-    if(filterBooks.length > 0 && filterAuthors.length > 0)
-    {
-        var max =  Math.max(filterBooks.length, filterAuthors.length);
+    if(filterBooks.length>0 && filterAuthors.length>0){
+      var max=  Math.max(filterBooks.length, filterAuthors.length);
     //   alert(max);
         for (var i = 0; i < secLen; i++)
         {
-            for (var j = 0; j < max; j++)
+            for (var j=0;j< max;j++)
             {
                 if ((filterAuthors[j] == author[i].innerHTML) &&(filterBooks[j] == title[i].innerHTML) )
                 {
                     sections[i].style = "display:block";
+                   
                 }
                 else
                 {
@@ -142,7 +132,7 @@ function removeFilter(me, list)
             break;
         }
     }
-    // console.log(list);
+    console.log(list);
     if(filterBooks.length == 0 && filterAuthors.length == 0)
     {
         for (var i = 0; i < secLen; i++)

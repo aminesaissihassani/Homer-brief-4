@@ -80,7 +80,7 @@
     overflow: hidden;
 
   }
-   
+  
   h1{
     font-size: 4vw;
     font-family: Rockwell;
@@ -90,10 +90,7 @@
     display: block;
   }
   .mobile{
-    margin-top: 3vw;
     display: none;
-    font-size: 7vw;
-
   }
   p{
     font-size: 2vw;
@@ -165,7 +162,6 @@
   }
   .mobile{
     display: block;
-    
   }
   p{
     font-size: 3vw;
@@ -337,7 +333,7 @@
             border: 3px #FCA311 solid ;
           } }
         .button{
-         top: 0px;
+         top: -20px;
          position: relative;
           .sliderbutton{
             display: inline-block;
@@ -444,7 +440,6 @@
         width:  240px;
         font-size: 27px; 
         }
-        
        } } }
        #imagebut5:target ~ .image2{ 
         left: 0px ;
@@ -550,52 +545,10 @@
     color: aliceblue;
     margin-left: 35px;
     font-weight: normal;
-    @media only screen and (max-width: 600px) 
-    {
-      
-      margin-left: 10px;
-      margin-right: 10px;
-    
-    }
-    @media only screen and (max-width: 580px) 
-{
-  width:  40%;
-  height: 60px;
-  font-size: 3vw;
-
-}
-@media only screen and (max-width: 440px) 
-{
-  width:  35%;
-  height: 50px;
-  font-size: 4vw;
-
-}
-@media only screen and (max-width: 321px) 
-{
-  width:  35%;
-  height: 50px;
-  font-size: 4vw;
-
-}
-
   }
   .butctg1 {
    @extend %sharedbutton;
     background-color: #F3722C;
-    
-    @media only screen and (max-width: 580px) 
-    {
-      margin-left: 0px;
-
-    
-    }
-    @media only screen and (max-width: 440px) 
-    {
-      margin-left: 0px;
-
-    
-    } 
    
   }
   .butctg2 {
@@ -605,18 +558,7 @@
   .butctg3 { 
      @extend %sharedbutton;
     background-color: #F9844A;
-    @media only screen and (max-width: 580px) 
-    {
-      margin-left: 0px;
-
-    
-    }
-    @media only screen and (max-width: 440px) 
-    {
-      margin-left: 0px;
-
-    
-    } 
+  
   }
   .butctg4 {
     @extend %sharedbutton;
@@ -625,18 +567,7 @@
   .butctg5 {
     @extend %sharedbutton;
     background-color: #90BE6D;
-    @media only screen and (max-width: 580px) 
-    {
-      margin-left: 0px;
-
-    
-    }
-    @media only screen and (max-width: 440px) 
-    {
-      margin-left: 0px;
-
-    
-    } 
+  
   }
   .butctg6 {
     @extend %sharedbutton;
@@ -646,23 +577,11 @@
   .butctg7 {
     @extend %sharedbutton;
     background-color: #4D908E;
-    @media only screen and (max-width: 580px) 
-    {
-      margin-left: 0px;
-
-    
-    }
-    @media only screen and (max-width: 440px) 
-    {
-      margin-left: 0px;
-
-    
-    } 
+  
   }
   .butctg8 { 
      @extend %sharedbutton;
     background-color: #277DA1;
-
   
   }
   // .centre{
@@ -696,8 +615,6 @@
  .butctg9 {
   font-family: Rockwell;
   margin-top: 20px;
-  margin-bottom: 20px;
-
   font-size: 2vw;
   width:  20%;
   height: 60px;
@@ -716,27 +633,6 @@
   font-size: 27px;  
     
   
-}
-@media only screen and (max-width: 800px) 
-{
-  width:  40%;
-  height: 40px;
-  font-size: 3vw;
-
-}
-@media only screen and (max-width: 580px) 
-{
-  width:  40%;
-  height: 40px;
-  font-size: 3vw;
-
-}
-@media only screen and (max-width: 440px) 
-{
-  width:  30%;
-  height: 30px;
-  font-size: 4vw;
-
 }}    }                     
 
 

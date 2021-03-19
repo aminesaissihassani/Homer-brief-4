@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 <header>
@@ -26,14 +27,17 @@
 	<h2 class="titleadd">ADD AUTHOR</h2>
 	<div class="Add">
 		
-			<img src="images/athpic.png" id="addpc" onclick="upld()">
-			<input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" hidden>
-		<form class="athform" style="margin-top: 150px;">
+		<img src="images/athpic.png" id="addpc"  onclick="upld()">
+			
+		<form name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" >
+ 		 
+        <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="apic" hidden>
 			<div class="inp">
-				<input type="text" id="title" name="booktit" placeholder="Full NAME">
+				<input type="text" id="title" name="athorname" placeholder="Full NAME">
 			</div>
 			<div class="inp">
-				<input type="text" id="price" name="dateb" placeholder="DATE OF BIRTH" onfocus="(this.type='date')" onblur="(this.type='text')"> 
+                <input type="text" id="birthd" name="bithd" placeholder="DATE OF BIRTH" onfocus="(this.type='date')" onblur="(this.type='text')"> 
+	
 			</div>
 			
 		
@@ -137,17 +141,6 @@
 		</form>
 
 </footer>
-<script>
-	var fileup=document.querySelector("#upload");
-	const img = document.querySelector("#addpc");
-	function upld() {
-		fileup.click();
-	}
-
-	function uj() {
-		img.src = URL.createObjectURL(event.target.files[0]);
-		
-	}
-</script>
+<script src="js/author.js"></script>
 </body>
 </html>
