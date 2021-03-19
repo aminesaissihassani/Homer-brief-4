@@ -21,10 +21,10 @@
                 </label>
             </div>
             <div class="navcont navhide">
-                <a href="index.html">Home</a>
-                <a href="gallery.html">Gallary</a>
-                <a href="AddBooks.html">Books</a>
-                <a href="AddAuthors.html">Authors</a>
+                    <a href="index.php">Home</a>
+                    <a href="gallery.php">Gallary</a>
+                    <a href="bookadd.php">Books</a>
+                    <a href="authoradd.php">Authors</a>
             </div>
             <div class="login navhide">
                 <button class="in">Sign in</button>
@@ -32,10 +32,10 @@
             </div>
             <div id="navhide">
                 <div class="navcont navhide">
-                    <a href="index.html">Home</a>
-                    <a href="Gallerie.html">Gallary</a>
-                    <a href="AddBooks.html">Books</a>
-                    <a href="AddAuthors.html">Authors</a>
+                    <a href="index.php">Home</a>
+                    <a href="gallery.php">Gallary</a>
+                    <a href="bookadd.php">Books</a>
+                    <a href="authoradd.php">Authors</a>
                 </div>
                 <div class="login navhide">
                     <button class="in">Sign in</button>
