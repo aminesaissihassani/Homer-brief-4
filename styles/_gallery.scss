@@ -5,6 +5,7 @@
 }
 .boder {
     display: flex;
+    
     .filter {
         @include flexCenter(column);
         margin: 30px 5px;
@@ -53,7 +54,9 @@
             text-align: center;
             div {
                 img {
-                    width: 85%;
+                    width: 200px;
+
+                    height: 300px;
                 }
             }
         }
@@ -73,6 +76,14 @@
         }
         main {
             grid-template-columns: 50% 50%;
+            section {
+            div {
+                img {
+                    width: 100px;
+
+                    height: 200px;
+                }
+             } }
         }
     }
 }

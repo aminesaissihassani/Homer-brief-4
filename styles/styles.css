@@ -350,7 +350,8 @@ header #navhide {
 }
 
 .boder main section div img {
-  width: 85%;
+  width: 200px;
+  height: 300px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -375,6 +376,10 @@ header #navhide {
   .boder main {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
+  }
+  .boder main section div img {
+    width: 100px;
+    height: 200px;
   }
 }
 
