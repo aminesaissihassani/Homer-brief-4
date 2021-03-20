@@ -30,7 +30,7 @@
                 <button class="in">Sign in</button>
                 <button class="up">Sign Up</button>
             </div>
-            <div id="navhide">
+            <div id="navhide ">
                 <div class="navcont navhide">
                     <a href="index.php">Home</a>
                     <a href="gallery.php">Gallary</a>
