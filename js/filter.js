@@ -92,7 +92,7 @@ function filter()
     if(filterBooks.length>0 && filterAuthors.length>0){
         for (var i = 0; i < secLen; i++)
         {
-            cpa=0;
+            cpa=0; 
             for (var j in filterAuthors)
             {
                 
