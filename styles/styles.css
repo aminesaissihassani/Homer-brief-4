@@ -317,7 +317,8 @@ header #navhide {
 
 .boder .filter .showfilter {
   width: 80%;
-  border: 1px solid #E5E5E5;
+  border: none;
+  text-align: center;
 }
 
 .boder .filter .showfilter div {

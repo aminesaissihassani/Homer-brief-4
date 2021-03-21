@@ -154,7 +154,7 @@ $res=mysqli_query($link,$query);
             </form>
     
     </footer>
-    <div class="cp">&copy; CopyRight 2021 All Right Reserved by Homer.ml</div>
+    <div class="cp">&copy; CopyRight2021 All Right Reserved by Homer.ml</div>
 <script src="js/upbook.js"></script>
 </body>
 </html>

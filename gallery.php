@@ -1,9 +1,28 @@
 <?php
     $mysqli = new mysqli('localhost', 'root', '', 'library') or die($mysqli->error());
 
-    $content = $mysqli->query("select b.*,a.A_name from book b, bookauthor ba, author a where b.ID = ba.id_book and ba.id_author = a.ID") or die($content->error());
+    $content = $mysqli->query("select distinct  b.* from book b, bookauthor ba where b.ID = ba.id_book ") or die($content->error());
 
     $row = $content->fetch_array();
+
+
+    $option = '';
+    function listauthor($ib) {
+        global $option,$mysqli;
+        $option = '';
+        $qr="SELECT a.ID,a.A_name FROM author a,bookauthor ba where ba.Id_author=a.ID and  ba.Id_book=$ib ORDER BY ID ASC";
+        $res=mysqli_query($mysqli,$qr);
+    
+        while($row2 = mysqli_fetch_assoc($res))
+        {
+            
+        $option .= '<option value = "'.$row2['A_name'].'">'.$row2['A_name'].'</option>';
+        }
+    }
+
+
+
+
 
 ?>
 
@@ -62,18 +81,20 @@
             <!-- the filter -->
             <div class="filter">
                 <h2>Filter</h2>
-                <div class="showfilter" id="showfilter">
-                    
-                </div>
                 <div>
                     <input id="booksnamefilter" value="" type="text" placeholder="Book's Name">
-                    <label for="booksnamebtn"><i class="fas fa-plus-circle"></i></label>
+                    <label for="booksnamebtn"><i class="fas fa-plus-circle">+</i></label>
                     <input id="booksnamebtn" type="button" class="btnnone" onclick="filterBook();">
                 </div>
                 <div>
                     <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name">
-                    <label for="authorsnamebtn"><i class="fas fa-plus-circle"></i></label>
+                    <label for="authorsnamebtn"><i class="fas fa-plus-circle">+</i></label>
                     <input id="authorsnamebtn" type="button" class="btnnone" onclick="filterAuthor();">
+                </div>
+                <div class="showfilter" id="showfilter">
+                <div id="fbook" style="border:none;"></div>
+                <div id="fauthor" style="border:none;"></div>
+                    
                 </div>
             </div>
             <!-- the books show -->
@@ -84,7 +105,14 @@
                 <section>
                     <div><img src="<?php echo $row['img']; ?>" alt="books"></div>
                     <h4 class="title"><?php echo $row['b_name']; ?></h4>
-                    <h4 class="author"><?php echo $row['A_name']; ?></h4>
+                    <h4>
+                    <?php listauthor($row['ID']); ?> <select id="aid" class="author" name="authorid"> 
+						
+						<?php echo $option; ?>
+					</select>
+                    
+                    
+                    </h4>
                     <h4><span class="price"><?php echo $row['price']; ?></span>$</h4>
                 </section>
                 <?php endwhile; ?>
@@ -128,6 +156,6 @@
                 </form>
         
         </footer>
-        <div class="cp">&copy; CopyRight 2021 All Right Reserved by Homer.ml</div>
+        <div class="cp"> CopyRight&copy;2021 All Right Reserved by Homer.ml</div>
     </body>
 </html>
