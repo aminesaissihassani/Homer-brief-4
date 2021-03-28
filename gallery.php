@@ -82,13 +82,13 @@
             <div class="filter">
                 <h2>Filter</h2>
                 <div>
-                    <input id="booksnamefilter" value="" type="text" placeholder="Book's Name">
-                    <label for="booksnamebtn"><i class="fas fa-plus-circle">+</i></label>
+                    <input id="booksnamefilter" value="" type="text" placeholder="Book's Name" onkeyup="test(event,'b')">
+                    <label for="booksnamebtn"><i class="fas fa-plus-circle"></i></label>
                     <input id="booksnamebtn" type="button" class="btnnone" onclick="filterBook();">
                 </div>
                 <div>
-                    <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name">
-                    <label for="authorsnamebtn"><i class="fas fa-plus-circle">+</i></label>
+                    <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name" onkeyup="test(event,'a')">
+                    <label for="authorsnamebtn"><i class="fas fa-plus-circle"></i></label>
                     <input id="authorsnamebtn" type="button" class="btnnone" onclick="filterAuthor();">
                 </div>
                 <div class="showfilter" id="showfilter">
@@ -140,15 +140,15 @@
                 <form class="contact"><h3>Contact Us</h3>
                     <div>
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Enter your  name">
+                        <input type="text" id="name" placeholder="Enter your  name" required>
                     </div>
                     <div>
                     <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" placeholder="Enter your  phone number">
+                    <input type="text" id="phone" placeholder="Enter your  phone number" required>
                     </div>
                     <div>
                         <label for="message">Message</label>
-                    <input type="text" id="message" placeholder="Enter your  Message">
+                    <input type="text" id="message" placeholder="Enter your  Message" required>
                     </div>
                     
                     

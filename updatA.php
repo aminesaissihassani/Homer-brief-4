@@ -100,15 +100,15 @@ $data = mysqli_fetch_array($qry);
             <form class="contact"><h3>Contact Us</h3>
                 <div>
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your  name">
+                    <input type="text" id="name" placeholder="Enter your  name" required>
                 </div>
                 <div>
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your  phone number">
+                <input type="text" id="phone" placeholder="Enter your  phone number" required>
                 </div>
                 <div>
                     <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Enter your  Message">
+                <input type="text" id="message" placeholder="Enter your  Message" required>
                 </div>
                 
                 
