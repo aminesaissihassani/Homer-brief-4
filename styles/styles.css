@@ -346,13 +346,20 @@ header #navhide {
 }
 
 .boder main section {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
   text-align: center;
+  width: 80%;
 }
 
 .boder main section div img {
-  width: 200px;
+  width: 100%;
   height: 300px;
+}
+
+.boder main section select {
+  width: 80%;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -378,8 +385,11 @@ header #navhide {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
   }
+  .boder main section {
+    width: 90%;
+  }
   .boder main section div img {
-    width: 100px;
+    width: 100%;
     height: 200px;
   }
 }

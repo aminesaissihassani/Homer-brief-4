@@ -138,7 +138,6 @@ header #navhide {
   outline: 0 !important;
 }
 
-/*slid*/
 .nws {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,6 +153,8 @@ header #navhide {
           box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
   text-align: center;
   padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
 }
 
 .nws .imgnews {
@@ -161,7 +162,7 @@ header #navhide {
 }
 
 .nws .imgnews .img3 {
-  width: 80%;
+  width: 60%;
   height: 300px;
   margin: 20px;
   border-radius: 15px;
@@ -210,13 +211,13 @@ header #navhide {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow: hidden;
+  position: relative;
 }
 
-.contintro .imagecn .img1, .contintro .bscnt .img1, .BestS .imagecn .img1, .BestS .bscnt .img1 {
+.contintro .imagecn .img1, .contintro .imagecn .img2, .contintro .bscnt .img1, .contintro .bscnt .img2, .BestS .imagecn .img1, .BestS .imagecn .img2, .BestS .bscnt .img1, .BestS .bscnt .img2 {
   float: left;
   width: 40%;
-  height: 80%;
+  height: 300px;
   margin: 20px;
   border-radius: 15px;
   border: 3px #FCA311 solid;
@@ -224,6 +225,7 @@ header #navhide {
 
 .contintro .img, .contintro .bscnt, .BestS .img, .BestS .bscnt {
   width: 40%;
+  overflow: hidden;
 }
 
 .contintro .intro, .BestS .intro {
@@ -285,6 +287,7 @@ header #navhide {
   background-color: #ffffff;
   color: #FCA311;
   border: 3px #FCA311 solid;
+  width: 55%;
 }
 
 .BestS {
@@ -296,9 +299,6 @@ header #navhide {
 }
 
 @media only screen and (max-width: 800px) {
-  .titlens, .titlectg {
-    font-size: 6vw;
-  }
   .contintro, .BestS {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -326,10 +326,10 @@ header #navhide {
         flex-wrap: nowrap;
     overflow: hidden;
   }
-  .contintro .imagecn .img1, .BestS .imagecn .img1 {
+  .contintro .imagecn .img1, .contintro .imagecn .img2, .BestS .imagecn .img1, .BestS .imagecn .img2 {
     float: left;
     width: 40%;
-    height: 80%;
+    height: 250px;
     margin: 20px;
     border-radius: 15px;
     border: 3px #FCA311 solid;
@@ -350,25 +350,14 @@ header #navhide {
     color: #8D8E93;
   }
   .contintro button, .BestS button {
-    margin: 15px;
-    font-family: Rockwell;
     font-size: 3vw;
     width: 40vw;
     height: 5vw;
-    border-radius: 30px;
-    background-color: #FCA311;
-    border: none;
-    color: aliceblue;
-    -webkit-transition: width  0.5s ease;
-    transition: width  0.5s ease;
-    font-weight: normal;
     position: relative;
-    left: 30%;
+    left: 25%;
   }
   .contintro button:hover, .BestS button:hover {
-    background-color: #ffffff;
-    color: #FCA311;
-    border: 3px #FCA311 solid;
+    width: 44vw;
   }
   .contintro .img, .contintro .intro, .contintro .bscnt, .BestS .img, .BestS .intro, .BestS .bscnt {
     width: 100%;
@@ -385,30 +374,14 @@ header #navhide {
             flex-direction: column;
   }
   .nws {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background-color: #F5E8D1;
-    -webkit-box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
-            box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
-    text-align: center;
-    padding: 20px;
   }
   .nws .imgnews {
     width: 100%;
   }
   .nws .imgnews .img3 {
     width: 80%;
-    height: 300px;
-    margin: 20px;
-    border-radius: 15px;
-    border: 3px #FCA311 solid;
   }
   .nws .dnews {
     width: 100%;
@@ -418,236 +391,6 @@ header #navhide {
 
 .mobile {
   display: none;
-}
-
-/* Home Start */
-* {
-  outline: none !important;
-}
-
-.newbooks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 90%;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
-}
-
-.newbooks .dnb {
-  width: 200px;
-}
-
-.newbooks .dnb h1 {
-  font-size: 5vw;
-  font-family: Rockwell;
-}
-
-.newbooks .dnb P {
-  margin-top: 0px;
-  font-size: 3vw;
-  font-family: Rockwell;
-  color: #8D8E93;
-}
-
-.newbooks .dnb .btn {
-  font-family: Rockwell;
-  font-size: 1vw;
-  width: 40%;
-  height: 15%;
-  border-radius: 30px;
-  background-color: #FCA311;
-  border: none;
-  color: aliceblue;
-  -webkit-transition: width  0.5s ease;
-  transition: width  0.5s ease;
-  font-weight: normal;
-}
-
-.newbooks .dnb .btn:hover {
-  background-color: #ffffff;
-  color: #FCA311;
-  border: 3px #FCA311 solid;
-}
-
-.newbooks .imgnb {
-  width: 50%;
-  overflow: hidden;
-  text-align: center;
-}
-
-.newbooks .imgnb .image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 100%;
-  height: 460px;
-  position: relative;
-  transition: left 2s;
-  -webkit-transition: left 2s;
-  -moz-transition: left 2s;
-  -o-transition: left 2s;
-}
-
-.newbooks .imgnb .image .img1 {
-  float: left;
-  width: 40%;
-  height: 80%;
-  margin: 20px;
-  border-radius: 15px;
-  border: 3px #FCA311 solid;
-}
-
-.newbooks .imgnb .button {
-  top: 0px;
-  position: relative;
-}
-
-.newbooks .imgnb .button .sliderbutton {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-radius: 5px;
-  background-color: black;
-}
-
-#imagebut1:target ~ .image {
-  left: 0px;
-}
-
-#imagebut2:target ~ .image {
-  left: -200px;
-}
-
-#imagebut3:target ~ .image {
-  left: -450px;
-}
-
-#imagebut4:target ~ .image {
-  left: -550px;
-}
-
-.bestsell {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: #E5E5E5;
-}
-
-.bestsell .imgbs {
-  width: 50vw;
-  height: 420px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  text-align: center;
-}
-
-.bestsell .imgbs .image2 {
-  width: 1200px;
-  height: 420px;
-  position: relative;
-  transition: left 2s;
-  -webkit-transition: left 2s;
-  -moz-transition: left 2s;
-  -o-transition: left 2s;
-}
-
-.bestsell .imgbs .image2 .img2 {
-  float: left;
-  width: 240px;
-  height: 365px;
-  margin: 20px;
-  border-radius: 15px;
-  border: 3px #FCA311 solid;
-}
-
-.bestsell .imgbs .button {
-  top: -20px;
-  position: relative;
-}
-
-.bestsell .imgbs .button .sliderbutton {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-radius: 5px;
-  background-color: black;
-}
-
-.bestsell .dbs {
-  width: 50vw;
-  margin-top: 60px;
-  margin-left: 60px;
-}
-
-.bestsell .dbs h1 {
-  font-size: 2vw;
-  font-family: Rockwell;
-  margin-bottom: 10px;
-}
-
-.bestsell .dbs P {
-  margin-top: 0px;
-  font-size: 35px;
-  font-family: Rockwell;
-  color: #8D8E93;
-  margin-bottom: 30px;
-  margin-left: 20px;
-}
-
-.bestsell .dbs .btn2 {
-  font-family: Rockwell;
-  margin-top: 20px;
-  font-size: 25px;
-  width: 230px;
-  height: 60px;
-  border-radius: 30px;
-  background-color: #FCA311;
-  border: none;
-  color: aliceblue;
-  margin-left: 120px;
-  -webkit-transition: width  0.5s ease;
-  transition: width  0.5s ease;
-  font-weight: normal;
-}
-
-.bestsell .dbs .btn2:hover {
-  background-color: #ffffff;
-  color: #FCA311;
-  border: 3px #FCA311 solid;
-  width: 240px;
-  font-size: 27px;
-}
-
-#imagebut5:target ~ .image2 {
-  left: 0px;
-}
-
-#imagebut6:target ~ .image2 {
-  left: -200px;
-}
-
-#imagebut7:target ~ .image2 {
-  left: -450px;
-}
-
-#imagebut8:target ~ .image2 {
-  left: -550px;
 }
 
 .titlens {
@@ -660,63 +403,9 @@ header #navhide {
   text-shadow: 3px 2px #D38812;
 }
 
-.news {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: #F5E8D1;
-  -webkit-box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.16);
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-
-.news .dnews {
-  width: 50%;
-  margin-top: 35px;
-  margin-left: 10px;
-  margin-right: 20px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.news .dnews h1 {
-  font-size: 2vw;
-  font-family: Rockwell;
-  margin-bottom: 10px;
-}
-
-.news .dnews P {
-  margin-top: 0px;
-  font-size: 25px;
-  font-family: Rockwell;
-  color: #8D8E93;
-  margin-bottom: 30px;
-}
-
-.news .imgnews {
-  width: 40%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.news .imgnews .img3 {
-  width: 525px;
-  height: 300px;
-  margin: 20px;
-  border-radius: 15px;
-  border: 3px #FCA311 solid;
+.titlectg {
+  font-size: 4vw;
+  margin-top: 10px;
 }
 
 /* categories*/
@@ -734,15 +423,15 @@ header #navhide {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 20px;
 }
 
-.titlectg {
+.catcont .titlectg {
   text-align: center;
-  font-size: 4vw;
   color: #3D405B;
 }
 
-.ctg {
+.catcont .ctg {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -763,7 +452,7 @@ header #navhide {
       align-content: center;
 }
 
-.ctg .butctg1, .ctg .butctg2, .ctg .butctg3, .ctg .butctg4, .ctg .butctg5, .ctg .butctg6, .ctg .butctg7, .ctg .butctg8 {
+.catcont .ctg button {
   margin-top: 20px;
   font-family: Rockwell;
   font-size: 2vw;
@@ -777,14 +466,14 @@ header #navhide {
 }
 
 @media only screen and (max-width: 600px) {
-  .ctg .butctg1, .ctg .butctg2, .ctg .butctg3, .ctg .butctg4, .ctg .butctg5, .ctg .butctg6, .ctg .butctg7, .ctg .butctg8 {
+  .catcont .ctg button {
     margin-left: 10px;
     margin-right: 10px;
   }
 }
 
 @media only screen and (max-width: 580px) {
-  .ctg .butctg1, .ctg .butctg2, .ctg .butctg3, .ctg .butctg4, .ctg .butctg5, .ctg .butctg6, .ctg .butctg7, .ctg .butctg8 {
+  .catcont .ctg button {
     width: 40%;
     height: 60px;
     font-size: 3vw;
@@ -792,7 +481,7 @@ header #navhide {
 }
 
 @media only screen and (max-width: 440px) {
-  .ctg .butctg1, .ctg .butctg2, .ctg .butctg3, .ctg .butctg4, .ctg .butctg5, .ctg .butctg6, .ctg .butctg7, .ctg .butctg8 {
+  .catcont .ctg button {
     width: 35%;
     height: 50px;
     font-size: 4vw;
@@ -800,94 +489,52 @@ header #navhide {
 }
 
 @media only screen and (max-width: 321px) {
-  .ctg .butctg1, .ctg .butctg2, .ctg .butctg3, .ctg .butctg4, .ctg .butctg5, .ctg .butctg6, .ctg .butctg7, .ctg .butctg8 {
+  .catcont .ctg button {
     width: 35%;
     height: 50px;
     font-size: 4vw;
   }
 }
 
-.ctg .butctg1 {
+@media only screen and (max-width: 580px) {
+  .catcont .ctg button {
+    margin-left: 0px;
+  }
+}
+
+.catcont .ctg button.butctg1 {
   background-color: #F3722C;
 }
 
-@media only screen and (max-width: 580px) {
-  .ctg .butctg1 {
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .ctg .butctg1 {
-    margin-left: 0px;
-  }
-}
-
-.ctg .butctg2 {
+.catcont .ctg button.butctg2 {
   background-color: #F8961E;
 }
 
-.ctg .butctg3 {
+.catcont .ctg button.butctg3 {
   background-color: #F9844A;
 }
 
-@media only screen and (max-width: 580px) {
-  .ctg .butctg3 {
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .ctg .butctg3 {
-    margin-left: 0px;
-  }
-}
-
-.ctg .butctg4 {
+.catcont .ctg button.butctg4 {
   background-color: #F9C74F;
 }
 
-.ctg .butctg5 {
+.catcont .ctg button.butctg5 {
   background-color: #90BE6D;
 }
 
-@media only screen and (max-width: 580px) {
-  .ctg .butctg5 {
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .ctg .butctg5 {
-    margin-left: 0px;
-  }
-}
-
-.ctg .butctg6 {
+.catcont .ctg button.butctg6 {
   background-color: #43AA8B;
 }
 
-.ctg .butctg7 {
+.catcont .ctg button.butctg7 {
   background-color: #4D908E;
 }
 
-@media only screen and (max-width: 580px) {
-  .ctg .butctg7 {
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .ctg .butctg7 {
-    margin-left: 0px;
-  }
-}
-
-.ctg .butctg8 {
+.catcont .ctg button.butctg8 {
   background-color: #277DA1;
 }
 
-.centre {
+.catcont .centre {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -903,7 +550,7 @@ header #navhide {
       align-content: center;
 }
 
-.centre .butctg9 {
+.catcont .centre .butctg9 {
   font-family: Rockwell;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -914,12 +561,12 @@ header #navhide {
   background-color: #FCA311;
   border: none;
   color: aliceblue;
-  -webkit-transition: width  0.5s ease;
-  transition: width  0.5s ease;
+  -webkit-transition: all  0.5s ease;
+  transition: all  0.5s ease;
   font-weight: normal;
 }
 
-.centre .butctg9:hover {
+.catcont .centre .butctg9:hover {
   background-color: #ffffff;
   color: #FCA311;
   border: 3px #FCA311 solid;
@@ -928,15 +575,7 @@ header #navhide {
 }
 
 @media only screen and (max-width: 800px) {
-  .centre .butctg9 {
-    width: 40%;
-    height: 40px;
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (max-width: 580px) {
-  .centre .butctg9 {
+  .catcont .centre .butctg9 {
     width: 40%;
     height: 40px;
     font-size: 3vw;
@@ -944,38 +583,20 @@ header #navhide {
 }
 
 @media only screen and (max-width: 440px) {
-  .centre .butctg9 {
-    width: 30%;
+  .catcont .centre .butctg9 {
+    width: 40%;
     height: 30px;
     font-size: 4vw;
   }
-}
-
-/* Home End */
-/* Gallery Start */
-.boder {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-@media only screen and (max-width: 800px) {
-  .titlens, .titlectg {
-    font-size: 10vw;
+  .catcont .centre .butctg9:hover {
+    width: 170px;
+    font-size: 17px;
   }
 }
 
-/* Gallery End */
-/* CRUD Start */
-/* CRUD End */
+@media only screen and (max-width: 800px) {
+  .titlens, .titlectg, .catcont.titlectg {
+    font-size: 10vw;
+  }
+}
 /*# sourceMappingURL=stylin.css.map */

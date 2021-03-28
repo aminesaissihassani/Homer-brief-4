@@ -5,6 +5,7 @@ function filterBook()
 {
     // adding the name to the filter show
     var booksName = document.getElementById("booksnamefilter").value;
+    if(booksName !=""){
     var idBooksName = booksName.replace(/ /g, "-");
     document.getElementById("fbook").innerHTML = '<div class="' + idBooksName + '">' +
             '<span>' + booksName + '</span>' +
@@ -17,6 +18,7 @@ function filterBook()
     // filtring 
 
     filter();
+    }
 
 }
 
@@ -25,6 +27,7 @@ function filterAuthor()
     // adding the name to the filter show
 
     var authorsName = document.getElementById("authorsnamefilter").value;
+    if(authorsName !=""){
     var idAuthorsName = authorsName.replace(/ /g, "-");
     document.getElementById("fauthor").innerHTML += '<div class="' + idAuthorsName + '">' +
             '<span>' + authorsName + '</span>' +
@@ -36,6 +39,8 @@ function filterAuthor()
     // filtring 
 
     filter();
+    }
+    
 }
 
 function filter()
