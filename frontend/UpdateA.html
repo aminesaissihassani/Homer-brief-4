@@ -5,16 +5,15 @@
 	 <meta name="Description" content="Description ">
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 	<script src="https://kit.fontawesome.com/ebe1dbdd6a.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="styles/styles.css">
-	<link rel="stylesheet" href="styles/footerf.css">
-    <script src="js/navbar.js"></script>
-
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/footerf.css">
+        <script src="../js/navbar.js"></script>
 </head>
 <body>
     <header>
-		<img class="logo" src="images/homer.png">
+		<img class="logo" src="../images/homer.png">
 		<div class="navmenu" id="navmenu">
 			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
 			<label for="check" class="menu">
@@ -45,43 +44,30 @@
 		</div>
 	</header>
 <section class="bod">
-	<h2 class="titleadd">UPDATE BOOKS</h2>
+	<h2 class="titleadd">UPDATE AUTHOR</h2>
 	<div class="Add">
 		
-		<img src="images/addpic.png" id="addpc" onclick="upld()">
+			<img src="../images/athpic.png" id="addpc" onclick="upld()" >
+			<input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" hidden>
+			<form name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" >
+ 		 
+				<input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="apic" hidden>
+					<div class="inp">
+						<input type="text" id="title" name="athorname" placeholder="Full NAME">
+					</div>
+					<div class="inp">
+						<input type="text" id="birthd" name="bithd" placeholder="DATE OF BIRTH" onfocus="(this.type='date')" onblur="(this.type='text')"> 
 			
-		<form name="bookform" onsubmit="validation();" >
-			<input type="file" name="flup" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" hidden>
-			<div class="inp">
-				<input type="text" id="title" name="booktit" placeholder="BOOK TITLE">
-			</div>
-			<div class="inp">
-				<input type="number" id="price" name="bookprice" placeholder="BOOK PRICE">
-			</div>
-			<div class="inp">
-				<input type="text" id="prodate" name="prodate" placeholder="PRODUCTION DATE" onfocus="(this.type='date')" onblur="(this.type='text')"> 
-			</div>
-			<div class="inp">
-				<div class="dropdown">
-					<input class="selected" onclick="showCheckboxes()" id="nameAth" type="text" placeholder="Select book author(s)" readonly>
-					<div class="options" id="checkboxes">
-						<label for="one">
-						  <input type="checkbox" name="author[]" id="one" onchange="show();" />AUTHOR 1</label>
-						<label for="two">
-						  <input type="checkbox" name="author[]" id="two" onchange="show();" />AUTHOR 2</label>
-						<label for="three">
-						  <input type="checkbox" name="author[]" id="three" onchange="show();" />AUTHOR 3</label>
-					  </div>
-				   
-				  </div>
-			</div>
-			<div class="btn">
-				<button>+</button>
-			</div>
-	
-		
-		</form>
-	</div>
+					</div>
+					
+				
+					<div class="btn">
+						<button>+</button>
+					</div>
+			
+				
+				</form>
+		</div>
 </section>
 
 <footer>
@@ -89,15 +75,15 @@
 		<h3>Follow Us</h3>
 		<p>Become a part of our dedicated team of innovative<br> book-loving professionals!</p>
 		<div class="social">
-			<img src="images/facebook.png">
-			<img src="images/instagram.png">
-			<img src="images/twitter.png">
+			<img src="../images/facebook.png">
+			<img src="../images/instagram.png">
+			<img src="../images/twitter.png">
 		</div>
 		
 		<div class="app">
 			
-			<img src="images/as.png" alt="appstore">
-			<img src="images/ps.png" alt="playstore">
+			<img src="../images/as.png" alt="appstore">
+			<img src="../images/ps.png" alt="playstore">
 		</div>
 		<!-- <h4>Get Homer app</h4> -->
 	</div>
@@ -121,6 +107,6 @@
 
 </footer>
 <div class="cp">&copy; CopyRight 2021 All Right Reserved by Homer.ml</div>
-<script src="js/addbookjs.js"></script>
+<script src="../js/author.js"></script>
 </body>
 </html>
