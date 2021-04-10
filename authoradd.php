@@ -88,7 +88,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 {?>
 			 <tr>
 				<td><label><?php echo $row['ID']?></label></td>
-				<td><label><?php echo $row['A_name']?></label></td>
+				<td><label><?php echo $row['A_name']?> </label></td>
 				<td><label><?php echo $row['D_brith']?></label></td>
 				<td><img src="<?php echo $row['img']?>"></td>
 				<td><a href="deleteA.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a>  <a href="updatA.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
