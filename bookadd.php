@@ -1,5 +1,6 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "library");
+include 'connect.php';
+
  $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
  $res=mysqli_query($connect,$query);
 
@@ -22,6 +23,66 @@ function listauthor($ib) {
 		
 	$option .= '<option value = "'.$row['ID'].'">'.$row['A_name'].'</option>';
 	}
+}
+
+
+if(isset($_POST['submit'])) {
+
+	$bookName = $_POST['booktit'];
+	$bookprice = $_POST['bookprice'];
+	$prodate = $_POST['prodate'];
+	// $authorid = $_POST['authorid'];
+	// $aid = (int)$authorid;
+	$img= $_FILES['flup']['name'];
+	$imgsrc= $_FILES['flup']['tmp_name'];
+	$folderLocation = "images";
+	$renm= rand();
+	$path="$folderLocation/".$renm.$img;
+	move_uploaded_file($imgsrc,$path);
+	$authors=$_POST['author'];
+	$sql = "INSERT INTO book (b_name,price,prod_date,img) VALUES ('$bookName', '$bookprice', '$prodate','$path' )";
+	$s2=mysqli_query($connect, $sql);
+	
+	if($s2=0){
+		echo "<script> alert('ERROR: Could not able to execute $sql')</script> " ;
+	}
+
+	//insert into book_author_tab
+	$qr="SELECT ID FROM book ORDER BY ID DESC Limit 1";
+	$rs=mysqli_query($connect,$qr);
+	$row = mysqli_fetch_assoc($rs); 
+	$id =  $row['ID'];
+	
+$bid = (int)$id;
+
+	foreach($authors as $a){
+	
+		$sql2 = "INSERT INTO bookauthor (Id_book,Id_author) VALUES ($bid,$a)";
+		$s=mysqli_query($connect, $sql2);
+		if($s=0){
+			echo "ERROR: Could not able to execute $sql2. " . mysqli_error($connect);
+		} 
+	}
+	header("location:bookadd.php");
+}
+
+if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+	$del = mysqli_query($connect,"DELETE FROM bookauthor WHERE Id_book = '$id'"); // delete query
+	$del2 = mysqli_query($connect,"delete from book  where ID = '$id'"); // delete query
+
+if($del)
+{
+
+    header("Location: bookadd.php"); // redirects to all records page
+}
+else
+{
+    echo "Error deleting record"; // display error message if not delete
+  
+}
+
+
 }
  ?>
 
@@ -46,7 +107,7 @@ function listauthor($ib) {
 <body>
 
 <header>
-		<img class="logo" src="images/homer.png">
+		<a href="index.php"><img class="logo" src="images/homer.png"></a>
 		<div class="navmenu" id="navmenu">
 			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
 			<label for="check" class="menu">
@@ -82,7 +143,7 @@ function listauthor($ib) {
 		
 			<img src="images/addpic.png" id="addpc" onclick="upld()">
 			
-		<form name="bookform" onsubmit="validation();" action="insertB.php"  method="post" enctype="multipart/form-data">
+		<form name="bookform" onsubmit="validation();" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post" enctype="multipart/form-data">
 			<input type="file" name="flup" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" hidden>
 			<div class="inp">
 				<input type="text" id="title" name="booktit" placeholder="BOOK TITLE">
@@ -108,7 +169,7 @@ function listauthor($ib) {
 				</div>
 			</div>
 			<div class="btn">
-				<button>+</button>
+				<button name="submit">+</button>
 			</div>
 	
 		
@@ -139,7 +200,7 @@ function listauthor($ib) {
 						
 						<?php echo $option; ?>
 					</select></td>
-				<td><a href="deleteb.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a> <a href="updatB.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
+				<td><a href="bookadd.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a> <a href="updatB.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
 			</tr>
 			<?php }?>
 </table>
@@ -163,15 +224,15 @@ function listauthor($ib) {
             <form class="contact"><h3>Contact Us</h3>
                 <div>
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your  name" required>
+                    <input type="text" id="name" placeholder="Enter your  name">
                 </div>
                 <div>
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your  phone number" required>
+                <input type="text" id="phone" placeholder="Enter your  phone number">
                 </div>
                 <div>
                     <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Enter your  Message" required>
+                <input type="text" id="message" placeholder="Enter your  Message">
                 </div>
                 
                 
@@ -183,3 +244,5 @@ function listauthor($ib) {
 <script src="js/addbookjs.js"></script>
 </body>
 </html>
+<?php 
+include 'deconnect.php'; ?>

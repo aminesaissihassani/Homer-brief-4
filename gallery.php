@@ -44,7 +44,7 @@
     </head>
     <body>
         <header>
-            <img class="logo" src="images/homer.png">
+        <a href="index.php"><img class="logo" src="images/homer.png"></a>
             <div class="navmenu" id="navmenu">
                 <input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
                 <label for="check" class="menu">
@@ -82,12 +82,12 @@
             <div class="filter">
                 <h2>Filter</h2>
                 <div>
-                    <input id="booksnamefilter" value="" type="text" placeholder="Book's Name" onkeyup="test(event,'b')">
+                    <input id="booksnamefilter" value="" type="text" placeholder="Book's Name">
                     <label for="booksnamebtn"><i class="fas fa-plus-circle"></i></label>
                     <input id="booksnamebtn" type="button" class="btnnone" onclick="filterBook();">
                 </div>
                 <div>
-                    <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name" onkeyup="test(event,'a')">
+                    <input id="authorsnamefilter" value="" type="text" placeholder="Author's Name">
                     <label for="authorsnamebtn"><i class="fas fa-plus-circle"></i></label>
                     <input id="authorsnamebtn" type="button" class="btnnone" onclick="filterAuthor();">
                 </div>
@@ -140,15 +140,15 @@
                 <form class="contact"><h3>Contact Us</h3>
                     <div>
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Enter your  name" required>
+                        <input type="text" id="name" placeholder="Enter your  name">
                     </div>
                     <div>
                     <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" placeholder="Enter your  phone number" required>
+                    <input type="text" id="phone" placeholder="Enter your  phone number">
                     </div>
                     <div>
                         <label for="message">Message</label>
-                    <input type="text" id="message" placeholder="Enter your  Message" required>
+                    <input type="text" id="message" placeholder="Enter your  Message">
                     </div>
                     
                     

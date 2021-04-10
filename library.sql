@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 28 mars 2021 à 15:08
+-- Généré le : Dim 11 avr. 2021 à 00:04
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 7.3.27
 
@@ -35,10 +35,6 @@ CREATE TABLE `author` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELATIONS POUR LA TABLE `author`:
---
-
---
 -- Déchargement des données de la table `author`
 --
 
@@ -64,10 +60,6 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELATIONS POUR LA TABLE `book`:
---
-
---
 -- Déchargement des données de la table `book`
 --
 
@@ -76,7 +68,14 @@ INSERT INTO `book` (`ID`, `b_name`, `price`, `prod_date`, `img`) VALUES
 (125, 'After You', 134, '2015-12-29', 'images/799125044AFTERU.jpg'),
 (126, 'Desert Royal', 100, '1999-01-01', 'images/DESERTROYAL.jpg'),
 (127, 'Before I Die', 106, '0000-00-00', 'images/BeforeIDie.jpg'),
-(128, 'The Broker', 140, '2005-01-11', 'images/514681578broker.jpg');
+(128, 'The Broker', 140, '2005-01-11', 'images/514681578broker.jpg'),
+(129, 'lkohuh', 1009, '2021-04-09', 'images/339375016pic5.jpg'),
+(131, 'mmm', 109, '2021-04-12', 'images/737242676pic1.jpg'),
+(136, 'kuguu', 2626, '2021-04-21', 'images/1857816618Web 1920 – 5.png'),
+(141, 'mmm', 109, '2021-04-27', 'images/1469690837pexels-secret-garden-931154.jpg'),
+(144, 'ihihi', 2626, '2021-04-14', 'images/1886007083danielle-cerullo-CQfNt66ttZM-unsplash.jpg'),
+(148, 'antigone', 106, '2021-04-23', 'images/318185372pexels-александар-цветановић-1560424.jpg'),
+(153, 'soumakgku', 109, '2021-04-21', 'images/637305407pexels-halil-i̇brahim-çeti̇n-2064110.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,14 +89,6 @@ CREATE TABLE `bookauthor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELATIONS POUR LA TABLE `bookauthor`:
---   `Id_book`
---       `book` -> `ID`
---   `Id_author`
---       `author` -> `ID`
---
-
---
 -- Déchargement des données de la table `bookauthor`
 --
 
@@ -106,7 +97,16 @@ INSERT INTO `bookauthor` (`Id_book`, `Id_author`) VALUES
 (125, 16),
 (126, 17),
 (127, 18),
-(128, 19);
+(128, 19),
+(129, 15),
+(131, 16),
+(131, 17),
+(141, 16),
+(141, 17),
+(144, 15),
+(148, 16),
+(153, 15),
+(153, 16);
 
 --
 -- Index pour les tables déchargées
@@ -139,13 +139,13 @@ ALTER TABLE `bookauthor`
 -- AUTO_INCREMENT pour la table `author`
 --
 ALTER TABLE `author`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `book`
 --
 ALTER TABLE `book`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- Contraintes pour les tables déchargées

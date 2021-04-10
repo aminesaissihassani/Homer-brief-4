@@ -1,7 +1,56 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "library");
- $query="SELECT * FROM author ORDER BY ID ASC";
+include 'connect.php';
+
+ $query="SELECT * FROM author ORDER BY ID DESC";
  $res=mysqli_query($connect,$query);
+
+
+ if(isset($_POST['submit'])) {
+
+	$authorName = $_POST['athorname'];
+	$prodate = $_POST['bithd'];
+	$img= $_FILES['apic']['name'];
+	$imgsrc= $_FILES['apic']['tmp_name'];
+	$folderLocation = "images";
+	$path="$folderLocation/".$img;
+	move_uploaded_file($imgsrc,$path);
+
+	$sql = "INSERT INTO author (A_name,D_brith,img) VALUES ('$authorName', '$prodate','$path' )";
+
+
+	if(mysqli_query($connect, $sql)){
+		echo "Records added successfully.";
+	} 
+
+	else{
+		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	}
+
+	header("location:authoradd.php");
+
+ }
+
+
+
+ if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+	$del = mysqli_query($connect,"DELETE FROM bookauthor WHERE Id_author= '$id'"); // delete query
+	$del2 = mysqli_query($connect,"delete from author  where ID = '$id'"); // delete query
+	
+if($del)
+{
+
+    header("Location: authoradd.php"); // redirects to all records page
+}
+else
+{
+    echo "Error deleting record"; // display error message if not delete
+  
+}
+
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +68,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 </head>
 <body>
 <header>
-		<img class="logo" src="images/homer.png">
+		<a href="index.php"><img class="logo" src="images/homer.png"></a>
 		<div class="navmenu" id="navmenu">
 			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
 			<label for="check" class="menu">
@@ -55,7 +104,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 		
 			<img src="images/addpic.png" id="addpc"  onclick="upld()">
 			
-		<form name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" action="insertA.php"  method="post" enctype="multipart/form-data">
+		<form name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post" enctype="multipart/form-data">
  		 
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="apic" hidden>
 			<div class="inp">
@@ -68,7 +117,7 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 			
 		
 			<div class="btn">
-				<button>+</button>
+				<button name="submit">+</button>
 			</div>
 	
 		
@@ -88,10 +137,10 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 {?>
 			 <tr>
 				<td><label><?php echo $row['ID']?></label></td>
-				<td><label><?php echo $row['A_name']?> </label></td>
+				<td><label><?php echo $row['A_name']?></label></td>
 				<td><label><?php echo $row['D_brith']?></label></td>
 				<td><img src="<?php echo $row['img']?>"></td>
-				<td><a href="deleteA.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a>  <a href="updatA.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
+				<td><a href="authoradd.php?id=<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt op"  onclick="alert('deleted')"></i></a>  <a href="updatA.php?id=<?php echo $row['ID']; ?>"><i class="far fa-edit op" ></i> </a></td>
 			</tr>
 			<?php }?>
 	
@@ -118,15 +167,15 @@ $connect = mysqli_connect("localhost", "root", "", "library");
             <form class="contact"><h3>Contact Us</h3>
                 <div>
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your  name" required>
+                    <input type="text" id="name" placeholder="Enter your  name">
                 </div>
                 <div>
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your  phone number" required>
+                <input type="text" id="phone" placeholder="Enter your  phone number">
                 </div>
                 <div>
                     <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Enter your  Message" required>
+                <input type="text" id="message" placeholder="Enter your  Message">
                 </div>
                 
                 
@@ -138,3 +187,6 @@ $connect = mysqli_connect("localhost", "root", "", "library");
 <script src="js/author.js"></script>
 </body>
 </html>
+
+<?php 
+include 'deconnect.php'; ?>

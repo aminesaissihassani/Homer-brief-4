@@ -1,13 +1,13 @@
 <?php
-$link = mysqli_connect("localhost","root", "", "library");
+include 'connect.php';
 
 $id = $_GET['id']; 
 
-$qry = mysqli_query($link,"select * from book where ID=$id");
+$qry = mysqli_query($connect,"select * from book where ID=$id");
 $data = mysqli_fetch_array($qry); 
 
 $selc="SELECT Id_author FROM bookauthor as atr where  atr.Id_book=$id";
-$res2=mysqli_query($link,$selc);
+$res2=mysqli_query($connect,$selc);
 $arr = array();
 while($dataselec= mysqli_fetch_array($res2))
 {
@@ -15,7 +15,51 @@ while($dataselec= mysqli_fetch_array($res2))
 }
 
 $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
-$res=mysqli_query($link,$query);
+$res=mysqli_query($connect,$query);
+
+if(isset($_POST['submit'])) {
+	
+		$bid = $_POST['idb'];
+		$bookName = $_POST['booktit'];
+		$bookprice = $_POST['bookprice'];
+		$prodate = $_POST['prodate'];
+		$authorid = $_POST['authorid'];
+		$aid = (int)$authorid;
+		$img= $_FILES['flup']['name'];
+		$imgsrc= $_FILES['flup']['tmp_name'];
+		$folderLocation = "images";
+		$path="$folderLocation/".$img;
+		$authors=$_POST['author'];
+		move_uploaded_file($imgsrc,$path);
+		if(empty($img)){
+			$sql = "UPDATE book set b_name='$bookName',price='$bookprice',prod_date='$prodate' where ID='$bid' ";
+		}
+		else{
+			$sql = "UPDATE book set b_name='$bookName',price='$bookprice',prod_date='$prodate',img='$path' where ID='$bid' ";
+		}
+
+		$s2=mysqli_query($connect, $sql);
+
+		if($s2=0){
+			echo "<script> alert('ERROR: Could not able to execute $sql')</script> " ;
+		}
+
+		$sq = "DELETE FROM bookauthor where Id_book=$bid ";
+		$s=mysqli_query($connect, $sq);
+
+		foreach($authors as $a){
+		
+			$sql2 = "INSERT INTO bookauthor (Id_book,Id_author) VALUES ($bid,$a)";
+			$s=mysqli_query($connect, $sql2);
+			if($s=0){
+				echo "ERROR: Could not able to execute $sql2. " . mysqli_error($connect);
+			} 
+		}
+		header("location:bookadd.php");
+
+}
+
+
 
 ?>
 
@@ -37,7 +81,7 @@ $res=mysqli_query($link,$query);
 </head>
 <body>
 <header>
-		<img class="logo" src="images/homer.png">
+		<a href="index.php"><img class="logo" src="images/homer.png"></a>
 		<div class="navmenu" id="navmenu">
 			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
 			<label for="check" class="menu">
@@ -73,7 +117,7 @@ $res=mysqli_query($link,$query);
 		
 			<img src="<?php echo $data['img']?>" id="addpc" onclick="upld()">
 			
-		<form name="bookform"  onsubmit="validation();" action="editB.php"  method="post" enctype="multipart/form-data">
+		<form name="bookform"  onsubmit="validation();" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post" enctype="multipart/form-data">
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="flup" hidden>
 			<div class="inp">
                 <input type="text" name="idb" value="<?php echo $id?>" readonly hidden>
@@ -110,7 +154,7 @@ $res=mysqli_query($link,$query);
 				</div>
 			</div>
 			<div class="btn">
-				<button>+</button>
+				<button name="submit">+</button>
 			</div>
 	
 		
@@ -138,15 +182,15 @@ $res=mysqli_query($link,$query);
             <form class="contact"><h3>Contact Us</h3>
                 <div>
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your  name" required>
+                    <input type="text" id="name" placeholder="Enter your  name">
                 </div>
                 <div>
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your  phone number" required>
+                <input type="text" id="phone" placeholder="Enter your  phone number">
                 </div>
                 <div>
                     <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Enter your  Message" required>
+                <input type="text" id="message" placeholder="Enter your  Message">
                 </div>
                 
                 
@@ -158,3 +202,6 @@ $res=mysqli_query($link,$query);
 <script src="js/upbook.js"></script>
 </body>
 </html>
+
+<?php 
+include 'deconnect.php'; ?>

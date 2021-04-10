@@ -1,10 +1,47 @@
 <?php
-$link = mysqli_connect("localhost","root", "", "library");
+include 'connect.php';
 
 $id = $_GET['id']; 
 
-$qry = mysqli_query($link,"select * from author where ID=$id");
+$qry = mysqli_query($connect,"select * from author where ID=$id");
 $data = mysqli_fetch_array($qry); 
+
+if(isset($_POST['submit'])) {
+
+	
+		$bid = $_POST['idb'];
+		$bookName = $_POST['athorname'];
+		$prodate = $_POST['bithd'];
+		$img= $_FILES['flup']['name'];
+		$imgsrc= $_FILES['flup']['tmp_name'];
+		$folderLocation = "images";
+		$path="$folderLocation/".$img;
+		move_uploaded_file($imgsrc,$path);
+		if(empty($img)){
+			$sql = "UPDATE author set A_name='$bookName',D_brith='$prodate' where ID='$bid' ";
+		}
+		else{
+			$sql = "UPDATE author set A_name='$bookName',D_brith='$prodate',img='$path' where ID='$bid' ";
+		}
+		
+		$s2=mysqli_query($connect, $sql);
+
+		if($s2=0){
+
+			echo "<script> alert('ERROR: Could not able to execute $sql')</script> " ;
+		}
+
+
+
+
+  header("Location: authoradd.php");
+
+
+
+}
+
+
+
 
 ?>
 
@@ -23,7 +60,7 @@ $data = mysqli_fetch_array($qry);
 </head>
 <body>
 <header>
-		<img class="logo" src="images/homer.png">
+		<a href="index.php"><img class="logo" src="images/homer.png"></a>
 		<div class="navmenu" id="navmenu">
 			<input type="checkbox" id="check" onchange="menu(this)" name="checkbox">
 			<label for="check" class="menu">
@@ -59,7 +96,7 @@ $data = mysqli_fetch_array($qry);
 		
 			<img src="<?php echo $data['img']?>" id="addpc" onclick="upld()">
 			
-		<form  name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;" action="editA.php"  method="post" enctype="multipart/form-data">
+		<form  name="authorform" onsubmit="validation();" class="athform" style="margin-top: 150px;"  action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post" enctype="multipart/form-data">
         <input type="file" accept=".png, .jpg,.jpeg" id="upload" onchange="uj()" name="flup" hidden>
 			<div class="inp">
             <input type="text" name="idb" value="<?php echo $id?>" readonly hidden>
@@ -72,7 +109,7 @@ $data = mysqli_fetch_array($qry);
 			
 		
 			<div class="btn">
-				<button>+</button>
+				<button name="submit">+</button>
 			</div>
 	
 		
@@ -100,15 +137,15 @@ $data = mysqli_fetch_array($qry);
             <form class="contact"><h3>Contact Us</h3>
                 <div>
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your  name" required>
+                    <input type="text" id="name" placeholder="Enter your  name">
                 </div>
                 <div>
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your  phone number" required>
+                <input type="text" id="phone" placeholder="Enter your  phone number">
                 </div>
                 <div>
                     <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Enter your  Message" required>
+                <input type="text" id="message" placeholder="Enter your  Message">
                 </div>
                 
                 
