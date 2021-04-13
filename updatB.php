@@ -1,6 +1,6 @@
 <?php
 require 'connect.php';
-if(isset($_GIT['id'])) {
+if(isset($_GET['id'])) {
 $id = $_GET['id']; 
 
 $qry = mysqli_query($connect,"select * from book where ID=$id");
