@@ -1,6 +1,6 @@
 <?php
-include 'connect.php';
-
+require 'connect.php';
+if(isset($_GIT['id'])) {
 $id = $_GET['id']; 
 
 $qry = mysqli_query($connect,"select * from book where ID=$id");
@@ -13,7 +13,7 @@ while($dataselec= mysqli_fetch_array($res2))
 {
 	$arr[] =$dataselec['Id_author'];
 }
-
+}
 $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
 $res=mysqli_query($connect,$query);
 

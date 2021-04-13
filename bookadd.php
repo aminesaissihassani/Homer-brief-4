@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+require 'connect.php';
 
  $query="SELECT ID,A_name FROM author ORDER BY ID ASC";
  $res=mysqli_query($connect,$query);

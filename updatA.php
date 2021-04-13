@@ -1,10 +1,11 @@
 <?php
-include 'connect.php';
-
+require 'connect.php';
+if(isset($_GIT['id'])) {
 $id = $_GET['id']; 
 
 $qry = mysqli_query($connect,"select * from author where ID=$id");
 $data = mysqli_fetch_array($qry); 
+}
 
 if(isset($_POST['submit'])) {
 
